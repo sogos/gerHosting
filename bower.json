@@ -1,0 +1,9 @@
+{
+    "name": "ns-frontend",
+    "version": "0.0.1",
+    "dependencies": {
+        "twbs-bootstrap-sass": "*",
+        "select2": "*"
+    },
+    "private": true
+}
