@@ -27,11 +27,15 @@ class MenuBuilder
     public function createMainMenu(Request $request)
     {
         $menu = $this->factory->createItem('root', array('childrenAttributes' => array('class' => 'nav navbar-collapse collapse navbar-collapse-primary')));
-
-        $menu->addChild('Dashboard', array('route' => 'ger_frontend_default_index'))
+        $uniqid = uniqid();
+        $menu->addChild('Dashboard', array('uri' => '#' .$uniqid))
+            ->setAttribute('href', '#' .$uniqid)
             ->setAttribute('i-class', 'icon-dashboard icon-2x')
             ->setChildrenAttribute('class', 'collapse')
-                ->addChild('Test', array('route' => 'ger_frontend_default_test'))->setAttribute('i-class', 'icon-hand-up');
+             ->setChildrenAttribute('id', $uniqid)
+                ->addChild('Test', array('route' => 'ger_frontend_default_test'))
+                    ->setAttribute('i-class', 'icon-hand-up')
+                    ->setAttribute('class','in');
         $menu->addChild('Dashboard 2', array('route' => 'ger_frontend_default_index'))
             ->setAttribute('i-class', 'icon-dashboard icon-2x');
 

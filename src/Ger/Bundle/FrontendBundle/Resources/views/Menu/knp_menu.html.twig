@@ -86,19 +86,20 @@
             {%- if item.uri is not empty and (not matcher.isCurrent(item) or options.currentAsLink) %}
                 {{ block('linkElement') }}
             {%- else %}
-                {{ block('spanElement') }}
+                {{ block('linkElement') }}
             {%- endif %}
             {# render the list of children#}
             {%- set childrenClasses = item.childrenAttribute('class') is not empty ? [item.childrenAttribute('class')] : [] %}
+
             {%- set childrenClasses = childrenClasses|merge(['menu_level_' ~ item.level]) %}
             {%- set listAttributes = item.childrenAttributes|merge({'class': childrenClasses|join(' ') }) %}
-            {{ block('list') }}
+            {{  block('list') }}
         </li>
     {% endif %}
 {% endblock %}
 
 {% block linkElement %}{% import _self as knp_menu %}
-    {% if item.hasChildren and options.depth is not sameas(0) %}
+    {% if item.hasChildren %}
     <a href="{{ item.uri }}"{{ knp_menu.attributes(item.linkAttributes) }} class="accordion-toggle" data-toggle="collapse">{{ block('label') }}</a>
     {% else %}
     <a href="{{ item.uri }}"{{ knp_menu.attributes(item.linkAttributes) }}>{{ block('label') }}</a>
@@ -113,5 +114,8 @@
     {% if item.attribute('i-class') is not empty and item.level == 1 %}
         <i class="{{ item.attribute('i-class') }}"></i>
     {% endif %}
-    <span>{{ item.label }}<i class="icon-caret-down"></i></span>
+    <span>{{ item.label }}
+    {%- if item.hasChildren -%}<i class="icon-caret-down"></i>
+    {% endif %}
+    </span>
 {% endif %}{% endblock %}
