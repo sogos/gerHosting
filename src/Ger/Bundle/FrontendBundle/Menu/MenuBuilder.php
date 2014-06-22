@@ -31,13 +31,13 @@ class MenuBuilder
         $menu->addChild('Dashboard', array('uri' => '#' .$uniqid))
             ->setAttribute('href', '#' .$uniqid)
             ->setAttribute('i-class', 'icon-dashboard icon-2x')
+            ->setAttribute('class', 'dark-nav')
             ->setChildrenAttribute('class', 'collapse')
              ->setChildrenAttribute('id', $uniqid)
                 ->addChild('Test', array('route' => 'ger_frontend_default_test'))
-                    ->setAttribute('i-class', 'icon-hand-up')
-                    ->setAttribute('class','in');
-        $menu->addChild('Dashboard 2', array('route' => 'ger_frontend_default_index'))
-            ->setAttribute('i-class', 'icon-dashboard icon-2x');
+                    ->setAttribute('i-class', 'icon-hand-up');
+        $menu->addChild('Logout', array('route' => 'fos_user_security_logout'))
+            ->setAttribute('i-class', 'icon-user icon-2x');
 
         return $menu;
     }

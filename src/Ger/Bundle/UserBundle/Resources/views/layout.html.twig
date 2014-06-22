@@ -3,7 +3,7 @@
     <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Core Admin</a>
+            <a class="navbar-brand" href="#"><i class="icon-leaf icon-1x"></i> GER Hosting</a>
         </div>
 
     </nav>
@@ -16,7 +16,7 @@
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
             </a>
         {% else %}
-            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {#<a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> #}
         {% endif %}
     </div>
 
