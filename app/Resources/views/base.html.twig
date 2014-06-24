@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>Core Admin Theme</title>
+    <title>{% block title %}Ger Systems | {% endblock %}</title>
     {% block stylesheets %}
         {% stylesheets
         '@GerFrontendBundle/Resources/public/stylesheets/application.css'
