@@ -96,7 +96,7 @@
 
 <div class="primary-sidebar">
     <!-- Knp nav -->
-    {{ knp_menu_render('main', { 'currentClass': 'active', 'template': 'GerFrontendBundle:Menu:knp_menu.html.twig'}) }}
+    {{ knp_menu_render('main', { 'currentClass': 'active', 'template': 'GerFrontendBundle:Menu:left_menu.html.twig'}) }}
     <!-- Main nav -->
     <ul class="nav navbar-collapse collapse navbar-collapse-primary">
 
@@ -335,6 +335,9 @@
     <div class="row">
 
         <!-- Breadcrumb line -->
+        <div id="breadcrumbs">
+        {{ knp_menu_render('main', { 'currentClass': 'active', 'template': 'GerFrontendBundle:Menu:breadcrumb.html.twig'}) }}
+        </div>
 
         <div id="breadcrumbs">
             <div class="breadcrumb-button blue">

@@ -25,7 +25,7 @@
 
 
                 <div class="box-header">
-                    <span class="title">Login</span>
+                    <span class="title">{{ "layout.login"|trans }}</span>
                 </div>
                 <div class="box-content padded">
                     <div class="input-group addon-left">
@@ -40,6 +40,7 @@
                                style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-position: right center; cursor: auto;"
                                placeholder="{{ 'security.login.username'|trans }}" class="validate[required]"/>
                     </div>
+                    <p></p>
                     {# <label for="password">{{ 'security.login.password'|trans }}</label> #}
                     <div class="input-group addon-left">
             <span class="input-group-addon" href="#">
@@ -50,8 +51,7 @@
                                placeholder="{{ 'security.login.password'|trans }}" class="validate[required]"/>
                     </div>
 
-                    <div class="separate-sections"></div>
-                    <div class="separate-sections"></div>
+                    <p></p>
                     <div>
                         <input class="icheck" checked type="checkbox" id="remember_me" name="_remember_me" value="on">
                         <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
@@ -60,6 +60,7 @@
                         <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
                         <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
                     </div>#}
+                    <p></p>
                     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"
                            class="btn btn-blue btn-block"/>
 
