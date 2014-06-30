@@ -1,0 +1,11 @@
+{% extends '@GerFrontend/layout.html.twig' %}
+
+{% block maincontent %}
+    <div class="container">
+    <h3>Environments</h3>
+    {% for environment in environments %}
+        {{ enviroment.name }}
+    {% endfor %}
+        {{ form_row(form.name)  }}
+    </div>
+{% endblock %}

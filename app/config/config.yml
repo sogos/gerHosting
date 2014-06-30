@@ -80,3 +80,13 @@ knp_menu:
         template: knp_menu.html.twig
     templating: false # if true, enables the helper for PHP templates
     default_renderer: twig # The renderer to use, list is also available by default
+
+fos_rest:
+    view:
+        view_response_listener: force
+    routing_loader:
+        default_format: json
+
+sensio_framework_extra:
+    view:    { annotations: false }
+    router:  { annotations: true }

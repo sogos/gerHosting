@@ -20,6 +20,9 @@ class AppKernel extends Kernel
             new Ger\Bundle\UserBundle\GerUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Ger\Bundle\HostingBundle\GerHostingBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

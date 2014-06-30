@@ -1,0 +1,5 @@
+services:
+    ger_hosting.form.type.environment:
+        class: Ger\Bundle\HostingBundle\Form\Type\EnvironmentType
+        tags:
+            - { name: form.type, alias: ger_hosting_environment }
