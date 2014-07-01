@@ -3,16 +3,14 @@
 namespace Ger\Bundle\HostingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
- * Environment
- * @UniqueEntity("name")
- * @ORM\Table("environments")
- * @ORM\Entity(repositoryClass="Ger\Bundle\HostingBundle\Entity\EnvironmentRepository")
+ * Host
+ *
+ * @ORM\Table("hosts")
+ * @ORM\Entity(repositoryClass="Ger\Bundle\HostingBundle\Entity\HostRepository")
  */
-class Environment
+class Host
 {
     /**
      * @var integer
@@ -27,18 +25,15 @@ class Environment
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
-     * @NotBlank()
      */
     private $name;
 
-
     /**
-     * @var description
+     * @var string
      *
-     * @ORM\Column(name="description", type="text")
-     * @NotBlank()
+     * @ORM\Column(name="public_ip", type="string", length=255)
      */
-    private $description;
+    private $publicIp;
 
 
     /**
@@ -55,7 +50,7 @@ class Environment
      * Set name
      *
      * @param string $name
-     * @return Environment
+     * @return Host
      */
     public function setName($name)
     {
@@ -75,25 +70,25 @@ class Environment
     }
 
     /**
-     * Set description
+     * Set publicIp
      *
-     * @param string $description
-     * @return Environment
+     * @param string $publicIp
+     * @return Host
      */
-    public function setDescription($description)
+    public function setPublicIp($publicIp)
     {
-        $this->description = $description;
+        $this->publicIp = $publicIp;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get publicIp
      *
      * @return string 
      */
-    public function getDescription()
+    public function getPublicIp()
     {
-        return $this->description;
+        return $this->publicIp;
     }
 }

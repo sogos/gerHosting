@@ -16,7 +16,9 @@ class EnvironmentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name');
+        $builder
+            ->add('name')
+            ->add('description');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
