@@ -85,7 +85,9 @@ fos_rest:
     view:
         view_response_listener: force
     routing_loader:
-        default_format: json
+        default_format: html
+        include_format: true
+
 
 sensio_framework_extra:
     view:    { annotations: false }

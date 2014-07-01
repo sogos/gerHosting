@@ -1,11 +1,9 @@
 ger_hosting:
-    resource: "@GerHostingBundle/Controller/"
-    type:     annotation
-    prefix:   /
+    resource: "@GerHostingBundle/Resources/config/routing.yml"
 
 ger_frontend:
-    resource: "Ger\Bundle\HostingBundle\Controller\EnvironmentController"
-    type:     rest
+    resource: "Ger\Bundle\FrontendBundle\Controller\DefaultController"
+    type:     annotation
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

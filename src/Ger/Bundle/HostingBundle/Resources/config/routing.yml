@@ -1,0 +1,2 @@
+ger_hosting_environment:
+    resource: "@GerHostingBundle/Resources/config/routing/environment.yml"

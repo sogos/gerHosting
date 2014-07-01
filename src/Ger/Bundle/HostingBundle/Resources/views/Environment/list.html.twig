@@ -2,10 +2,36 @@
 
 {% block maincontent %}
     <div class="container">
-    <h3>Environments</h3>
-    {% for environment in environments %}
-        {{ enviroment.name }}
-    {% endfor %}
-        {{ form_row(form.name)  }}
+        <h3>Environments</h3>
+        {% if environments|length > 0 %}
+            <div class="col-lg-6">
+                <h4>Liste des Environnements</h4>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+            {% for environment in environments %}
+                <tbody>
+                <tr>
+                    <td>{{ environment.name }}</td>
+                    <td><a class="btn btn-danger" href="{{ path("api_environments_get_delete_environment",{ 'id': environment.id }) }}"api_environments_delete_environment>Supprimer</a>
+                        <a class="btn btn-danger">Supprimer</a></td>
+                </tr>
+                </tbody>
+            {% endfor %}
+            </table>
+            </div>
+        {% endif %}
+    <div class="col-lg-3">
+        <h4>Ajouter un Environnement</h4>
+        {{ form_start(form,{ attr: { 'novalidate': 'novalidate', 'method': 'POST', 'action': '{{ path("api_environments_post_environments") }}' } }) }}
+        {{ form_row(form.name) }}
+        <span><input type="submit" class="btn btn-primary btn-sm" value="Ajouter"/></span>
+        {{ form_rest(form) }}
+
+        </div>
     </div>
 {% endblock %}

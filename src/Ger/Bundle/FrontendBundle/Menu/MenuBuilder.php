@@ -34,7 +34,7 @@ class MenuBuilder
             ->setAttribute('class', 'dark-nav')
             ->setChildrenAttribute('class', 'collapse')
              ->setChildrenAttribute('id', $uniqid)
-                ->addChild('Environments', array('route' => 'ger_hosting_environment_getenvironments'))
+                ->addChild('Environments', array('route' => 'api_environments_get_environments'))
                     ->setAttribute('i-class', 'icon-hand-up');
         $menu->addChild('Logout', array('route' => 'fos_user_security_logout'))
             ->setAttribute('i-class', 'icon-user');

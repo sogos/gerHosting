@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AbstractController  extends Controller {
 
     /**
-     * @return object
+     * @inheritdoc
      */
     public function getEntityManager() {
         return $this->get('doctrine')->getManager();

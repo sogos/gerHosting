@@ -3,10 +3,11 @@
 namespace Ger\Bundle\HostingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Environment
- *
+ * @UniqueEntity("name")
  * @ORM\Table("environments")
  * @ORM\Entity(repositoryClass="Ger\Bundle\HostingBundle\Entity\EnvironmentRepository")
  */
