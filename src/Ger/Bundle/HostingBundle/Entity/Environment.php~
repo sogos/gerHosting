@@ -40,6 +40,11 @@ class Environment
      */
     private $description;
 
+    /**
+     * @var authority
+     * @ORM\ManyToOne(targetEntity="Ger\Bundle\HostingBundle\Entity\Authority", inversedBy="Environments")
+     */
+    private $authority;
 
     /**
      * Get id
@@ -72,5 +77,28 @@ class Environment
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Environment
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

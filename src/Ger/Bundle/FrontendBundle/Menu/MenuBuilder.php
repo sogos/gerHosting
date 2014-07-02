@@ -28,14 +28,16 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root', array('childrenAttributes' => array('class' => 'nav navbar-collapse collapse navbar-collapse-primary')));
         $uniqid = uniqid();
-        $menu->addChild('Dashboard', array('uri' => '#' .$uniqid))
+        $menu->addChild('Configuration', array('uri' => '#' .$uniqid))
             ->setAttribute('href', '#' .$uniqid)
             ->setAttribute('i-class', 'icon-dashboard')
             ->setAttribute('class', 'dark-nav')
             ->setChildrenAttribute('class', 'collapse')
              ->setChildrenAttribute('id', $uniqid)
-                ->addChild('Environments', array('route' => 'api_environments_get_environments'))
+                ->addChild('Environnements', array('route' => 'api_environments_get_environments'))
                     ->setAttribute('i-class', 'icon-hand-up');
+                $menu['Configuration']->addChild('Autorités', array('route' => 'api_authorities_get_authorities'))
+                    ->setAttribute('i-class', 'icon-money');
         $menu->addChild('Logout', array('route' => 'fos_user_security_logout'))
             ->setAttribute('i-class', 'icon-user');
 

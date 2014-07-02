@@ -20,4 +20,11 @@ class AbstractController  extends Controller {
     public function getEnvironmentRepository() {
         return $this->getEntityManager()->getRepository('GerHostingBundle:Environment');
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthorityRepository() {
+        return $this->getEntityManager()->getRepository('GerHostingBundle:Authority');
+    }
 } 

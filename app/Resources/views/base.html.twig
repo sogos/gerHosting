@@ -14,6 +14,9 @@
     {% block stylesheets %}
         {% stylesheets
         '@GerFrontendBundle/Resources/public/stylesheets/application.css'
+        '@GerFrontendBundle/Resources/public/stylesheets/alertify.core.css'
+        '@GerFrontendBundle/Resources/public/stylesheets/alertify.default.css'
+        '@GerFrontendBundle/Resources/public/stylesheets/alertify.bootstrap.css'
         '@GerFrontendBundle/Resources/public/stylesheets/ger.css'
         output='bundles/gerfrontend/compiled/application.css'
         filter='yui_css'
@@ -22,7 +25,9 @@
         {% endstylesheets %}
     {% endblock %}
     {%  block javascripts %}
-        {% javascripts '@GerFrontendBundle/Resources/public/javascripts/application.js'
+        {% javascripts
+        '@GerFrontendBundle/Resources/public/javascripts/application.js'
+        '@GerFrontendBundle/Resources/public/javascripts/alertify.js'
         filter='yui_js'
         output='bundles/gerfrontend/compiled/application.js'
         %}

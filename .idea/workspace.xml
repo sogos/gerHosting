@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07017466-aeb1-43da-8549-d0850bfbca58" name="Default" comment="" />
+    <list default="true" id="07017466-aeb1-43da-8549-d0850bfbca58" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/AuthorityType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Authority/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="ger.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,29 +45,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EnvironmentController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php">
+      <file leaf-file-name="list.html.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="58" selection-start="3695" selection-end="3695" vertical-scroll-proportion="-10.076923" vertical-offset="1438" max-vertical-offset="2278">
+            <state line="89" column="67" selection-start="4541" selection-end="4541" vertical-scroll-proportion="0.80218446" vertical-offset="674" max-vertical-offset="1920">
               <folding>
-                <element signature="e#55#108#0" expanded="true" />
-                <element signature="e#1109#1145#1" expanded="true" />
-                <element signature="e#1901#1936#1" expanded="true" />
-                <element signature="e#2199#2235#1" expanded="true" />
-                <element signature="e#2600#2635#1" expanded="true" />
-                <element signature="e#3382#3425#0" expanded="true" />
-                <element signature="e#4449#4484#1" expanded="true" />
-                <element signature="e#4747#4790#0" expanded="true" />
+                <element signature="e#12#41#0" expanded="true" />
+                <element signature="e#4193#4219#0" expanded="true" />
+                <element signature="e#4756#4782#0" expanded="true" />
+                <element signature="e#5385#5411#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="20" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="476">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -57,29 +62,7 @@
       <file leaf-file-name="EnvironmentType.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="30" selection-start="493" selection-end="493" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="561">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html.twig" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="64" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.8222491" vertical-offset="0" max-vertical-offset="1717">
-              <folding>
-                <element signature="e#12#41#0" expanded="true" />
-                <element signature="e#1026#1063#0" expanded="true" />
-                <element signature="e#1300#1339#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Environment.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="5" selection-start="1103" selection-end="1103" vertical-scroll-proportion="-22.884615" vertical-offset="391" max-vertical-offset="1751">
+            <state line="24" column="59" selection-start="712" selection-end="712" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="570">
               <folding />
             </state>
           </provider>
@@ -88,34 +71,67 @@
       <file leaf-file-name="MenuBuilder.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="94" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="833">
+            <state line="39" column="57" selection-start="1328" selection-end="1328" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <file leaf-file-name="Environment.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="28" selection-start="2654" selection-end="2654" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="1683">
+            <state line="12" column="29" selection-start="329" selection-end="329" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="1980">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <file leaf-file-name="Authority.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Authority.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="59" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="510">
+            <state line="72" column="5" selection-start="1235" selection-end="1235" vertical-scroll-proportion="-20.0" vertical-offset="600" max-vertical-offset="1725">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="environment.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/environment.yml">
+      <file leaf-file-name="AuthorityType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/AuthorityType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="75" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
+            <state line="33" column="1" selection-start="761" selection-end="761" vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="480">
+              <folding>
+                <element signature="e#6#88#0" expanded="false" />
+                <element signature="e#137#177#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Authority/list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="26" selection-start="713" selection-end="713" vertical-scroll-proportion="-6.1764708" vertical-offset="0" max-vertical-offset="1620">
+              <folding>
+                <element signature="e#12#41#0" expanded="true" />
+                <element signature="e#4170#4196#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="63" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authority.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="63" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
               <folding />
             </state>
           </provider>
@@ -124,8 +140,10 @@
       <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
-              <folding />
+            <state line="4" column="67" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+              <folding>
+                <marker date="1404302670074" expanded="true" signature="0:100" placeholder="ger_hosting_environment:" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,6 +154,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -162,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Default/test.html.twig" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Menu/breadcrumb.html.twig" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Menu/left_menu.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Controller/AbstractController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
@@ -172,18 +192,25 @@
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Application.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Controller/EnvironmentController.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/DependencyInjection/GerHostingExtension.php" />
-        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/environment.yml" />
-        <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/web/app_dev.php" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/AuthorityType.php" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Authority.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php" />
-        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Authority/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig" />
       </list>
     </option>
@@ -231,9 +258,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
     <option name="y" value="31" />
-    <option name="width" value="1920" />
-    <option name="height" value="1000" />
+    <option name="width" value="1922" />
+    <option name="height" value="1004" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -552,6 +580,20 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="web">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="src">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
@@ -571,6 +613,10 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="UserBundle">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -593,6 +639,194 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="HostingBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HostingBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Environment">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HostingBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HostingBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Authority">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HostingBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HostingBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="config">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="HostingBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="config">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="routing">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -675,6 +909,152 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FrontendBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FrontendBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Menu">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Ger/Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FrontendBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Controller">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gerHosting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="config">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -688,32 +1068,32 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistory" value="Nom&#10;/**@&#10;/&#10;.&#10;.html&#10;55&#10;.Twog&#10;.twig&#10;.htm" />
+    <property name="SearchEverywhereHistory" value="&#10;/&#10;12&#10;3&#10;30p&#10;Nom&#10;/**@&#10;.&#10;.html&#10;55&#10;.Twog&#10;.twig&#10;.htm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views" />
+      <recent name="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type" />
+      <recent name="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing" />
+      <recent name="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller" />
       <recent name="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views" />
-      <recent name="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Controller" />
-      <recent name="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Menu" />
-      <recent name="$PROJECT_DIR$/src/Ger/Bundle/UserBundle/Resources/translations" />
-      <recent name="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Default" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -745,29 +1125,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1920" height="1000" extended-state="0" />
+    <frame x="-1" y="31" width="1922" height="1004" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26102942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3349917" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3349917" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -787,36 +1167,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-menu/src/Knp/Menu/Iterator/CurrentItemFilterIterator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="893" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu_base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="893" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="34" selection-start="1428" selection-end="1428" vertical-scroll-proportion="-14.041667" vertical-offset="368" max-vertical-offset="1605" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-menu/src/Knp/Menu/FactoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="20" selection-start="284" selection-end="284" vertical-scroll-proportion="0.4811321" vertical-offset="0" max-vertical-offset="530" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-menu/src/Knp/Menu/MenuFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2592" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-menu/src/Knp/Menu/Factory/CoreExtension.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-menu/src/Knp/Menu/Matcher/Voter/UriVoter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="5" selection-start="418" selection-end="793" vertical-scroll-proportion="0.73856974" vertical-offset="0" max-vertical-offset="853" />
@@ -897,11 +1247,6 @@
         <state line="14" column="0" selection-start="400" selection-end="697" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1275" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Default/test.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="338" column="51" selection-start="10572" selection-end="10572" vertical-scroll-proportion="0.0" vertical-offset="5070" max-vertical-offset="12045" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/UserBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="13" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="615" />
@@ -957,24 +1302,9 @@
         <state line="99" column="21" selection-start="4376" selection-end="4376" vertical-scroll-proportion="-29.25" vertical-offset="783" max-vertical-offset="1635" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1306" selection-end="1345" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="645" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="51" selection-start="3442" selection-end="3442" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="1620" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="23" selection-start="261" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="63" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/Loader/YamlFileLoader.php">
@@ -985,13 +1315,6 @@
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/DependencyInjection/GerHostingExtension.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="35" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="525" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
@@ -1008,23 +1331,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="94" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="88" column="28" selection-start="2654" selection-end="2654" vertical-scroll-proportion="0.0" vertical-offset="579" max-vertical-offset="1485">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="20" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="476">
           <folding />
         </state>
       </provider>
@@ -1036,43 +1345,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php">
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="493" selection-end="493" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="561">
+        <state line="14" column="4" selection-start="588" selection-end="588" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="540">
+          <folding>
+            <element signature="e#7#52#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="42" selection-start="4445" selection-end="4445" vertical-scroll-proportion="-27.375" vertical-offset="858" max-vertical-offset="1740">
+          <folding>
+            <element signature="e#12#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="77" selection-start="811" selection-end="811" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="720">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php">
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/Default/test.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="5" selection-start="1103" selection-end="1103" vertical-scroll-proportion="-22.884615" vertical-offset="391" max-vertical-offset="1751">
+        <state line="337" column="0" selection-start="10490" selection-end="10677" vertical-scroll-proportion="-5.490196" vertical-offset="4775" max-vertical-offset="12045">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="58" selection-start="3695" selection-end="3695" vertical-scroll-proportion="-10.076923" vertical-offset="1438" max-vertical-offset="2278">
+        <state line="72" column="104" selection-start="2703" selection-end="2703" vertical-scroll-proportion="-21.166666" vertical-offset="482" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="1" selection-start="621" selection-end="621" vertical-scroll-proportion="-1.75" vertical-offset="130" max-vertical-offset="2085">
           <folding>
             <element signature="e#55#108#0" expanded="true" />
-            <element signature="e#1109#1145#1" expanded="true" />
-            <element signature="e#1901#1936#1" expanded="true" />
-            <element signature="e#2199#2235#1" expanded="true" />
-            <element signature="e#2600#2635#1" expanded="true" />
-            <element signature="e#3382#3425#0" expanded="true" />
-            <element signature="e#4449#4484#1" expanded="true" />
-            <element signature="e#4747#4790#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="63" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="67" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding>
+            <marker date="1404302670074" expanded="true" signature="0:100" placeholder="ger_hosting_environment:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="63" selection-start="373" selection-end="373" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/AuthorityType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="1" selection-start="761" selection-end="761" vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="480">
+          <folding>
+            <element signature="e#6#88#0" expanded="false" />
+            <element signature="e#137#177#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Authority.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="5" selection-start="1235" selection-end="1235" vertical-scroll-proportion="-20.0" vertical-offset="600" max-vertical-offset="1725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="59" selection-start="712" selection-end="712" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="29" selection-start="329" selection-end="329" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="1980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Authority/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="26" selection-start="713" selection-end="713" vertical-scroll-proportion="-6.1764708" vertical-offset="0" max-vertical-offset="1620">
+          <folding>
+            <element signature="e#12#41#0" expanded="true" />
+            <element signature="e#4170#4196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="57" selection-start="1328" selection-end="1328" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="675">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="64" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.8222491" vertical-offset="0" max-vertical-offset="1717">
+        <state line="89" column="67" selection-start="4541" selection-end="4541" vertical-scroll-proportion="0.80218446" vertical-offset="674" max-vertical-offset="1920">
           <folding>
             <element signature="e#12#41#0" expanded="true" />
-            <element signature="e#1026#1063#0" expanded="true" />
-            <element signature="e#1300#1339#0" expanded="true" />
+            <element signature="e#4193#4219#0" expanded="true" />
+            <element signature="e#4756#4782#0" expanded="true" />
+            <element signature="e#5385#5411#0" expanded="true" />
           </folding>
         </state>
       </provider>

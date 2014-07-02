@@ -30,7 +30,8 @@ class EnvironmentController extends AbstractController
         return array(
             'environments' => $environments,
             'form' => $form->createView(),
-            'action' => $this->get('router')->generate('api_environments_post_environments')
+            'action' => $this->get('router')->generate('api_environments_post_environments'),
+            'type' => 'creation'
         );
     }
 
@@ -49,7 +50,7 @@ class EnvironmentController extends AbstractController
             if($request->getRequestFormat() == 'json') {
                 return array($environment);
             } else {
-                $this->get('session')->getFlashBag()->add("notice", "Your changes were saved!");
+                $this->get('session')->getFlashBag()->add("notice", "L'environnement a bien été crée");
                 return new RedirectResponse($this->get('router')->generate('api_environments_get_environments'));
             }
         }
@@ -57,7 +58,8 @@ class EnvironmentController extends AbstractController
         return array(
             'environments' => $environments,
             'form' => $form->createView(),
-            'action' => $this->get('router')->generate('api_environments_post_environments')
+            'action' => $this->get('router')->generate('api_environments_post_environments'),
+            'type' => 'creation',
         );
     }
 
@@ -68,6 +70,7 @@ class EnvironmentController extends AbstractController
         if($environment) {
             $this->getEntityManager()->remove($environment);
                 $this->getEntityManager()->flush();
+                $this->get('session')->getFlashBag()->add("notice", "L'environnement a bien été supprimé");
         }
         return new RedirectResponse($this->get('router')->generate('api_environments_get_environments'));
     }
@@ -89,7 +92,8 @@ class EnvironmentController extends AbstractController
         return array(
             'environments' => $environments,
             'form' => $form->createView(),
-            'action' => $this->get('router')->generate('api_environments_post_update_environments', array('id' => $id))
+            'action' => $this->get('router')->generate('api_environments_post_update_environments', array('id' => $id)),
+            'type' => 'edition'
         );
     }
 
@@ -113,7 +117,7 @@ class EnvironmentController extends AbstractController
             if($request->getRequestFormat() == 'json') {
                 return array($environment);
             } else {
-                $this->get('session')->getFlashBag()->add("notice", "Your changes were saved!");
+                $this->get('session')->getFlashBag()->add("notice", "L'environnement a bien été sauvegardé");
                 return new RedirectResponse($this->get('router')->generate('api_environments_get_environments'));
             }
         }
@@ -121,7 +125,8 @@ class EnvironmentController extends AbstractController
         return array(
             'environments' => $environments,
             'form' => $form->createView(),
-            'action' => $this->get('router')->generate('api_environments_post_update_environments', array('id' => $id))
+            'action' => $this->get('router')->generate('api_environments_post_update_environments', array('id' => $id)),
+            'type' => 'creation'
         );
     }
 

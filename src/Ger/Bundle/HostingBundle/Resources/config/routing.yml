@@ -1,2 +1,5 @@
 ger_hosting_environment:
     resource: "@GerHostingBundle/Resources/config/routing/environment.yml"
+
+ger_hosting_authority:
+    resource: "@GerHostingBundle/Resources/config/routing/authority.yml"

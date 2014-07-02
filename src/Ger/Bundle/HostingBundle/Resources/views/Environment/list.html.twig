@@ -1,10 +1,20 @@
 {% extends '@GerFrontend/layout.html.twig' %}
 
+{%- block title -%}
+    {{ parent() }}
+    Environnements
+{%- endblock -%}
+
 {% block maincontent %}
     <div class="container">
-        <h3>Environments</h3>
-
-        <div class="col-lg-6">
+        <div class="padded row col-lg-12 col-md-12">
+            <div id="breadcrumbs">
+                {{ knp_menu_render('main', { 'depth': 5, 'currentClass': 'active', 'template': 'GerFrontendBundle:Menu:breadcrumb.html.twig'}) }}
+            </div>
+        </div>
+    </div>
+    <div class="row padded">
+        <div class="col-lg-9 col-md-12">
             <div class="box">
                 <div class="box-header">
 
@@ -13,29 +23,31 @@
 
                 <div class="box-content">
                     {% if environments|length > 0 %}
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Actions</th>
-                        </tr>
-                        </thead>
-                        {% for environment in environments %}
-                            <tbody>
+                        <table class="table">
+                            <thead>
                             <tr>
-                                <td>{{ environment.name }}</td>
-                                <td>
-
-                                    <a class="btn btn-primary"
-                                       href="{{ path("api_environments_get_edit_environment",{ 'id': environment.id }) }}">Editer
-                                        <i class="icon icon-arrow-right"></i></a>
-                                    <a class="btn btn-danger"
-                                       href="{{ path("api_environments_get_delete_environment",{ 'id': environment.id }) }}">Supprimer</a>
-                                </td>
+                                <th>Nom</th>
+                                <th>Autorité</th>
+                                <th>Actions</th>
                             </tr>
-                            </tbody>
-                        {% endfor %}
-                    </table>
+                            </thead>
+                            {% for environment in environments %}
+                                <tbody>
+                                <tr>
+                                    <td>{{ environment.name }}</td>
+                                    <td><span class="label label-info">{{ environment.authority.name }}</span></td>
+                                    <td>
+
+                                        <a class="btn btn-gold"
+                                           href="{{ path("api_environments_get_edit_environment",{ 'id': environment.id }) }}">Editer
+                                            <i class="icon icon-arrow-right"></i></a>
+                                        <a class="btn btn-red"
+                                           href="{{ path("api_environments_get_delete_environment",{ 'id': environment.id }) }}">Supprimer</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
                     {% else %}
                         <div class="">
                             <div class="col-lg-4 col-lg-offset-4">Aucun environment défini</div>
@@ -45,11 +57,17 @@
 
             </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-3 col-md-4">
 
             <div class="box">
                 <div class="box-header">
-                    <span class="title">Ajouter/Modifier un Environment</span>
+                    <span class="title">
+                        {% if type == 'creation' %}
+                            Ajouter un Environment
+                        {% else %}
+                            Modifier l'Environnement
+                        {% endif %}
+                    </span>
                 </div>
 
                 <div class="box-content">
@@ -62,19 +80,27 @@
                                 <li class="input">
                                     {{ form_widget(form.name, { 'attr': { 'placeholder': 'Nom', 'style': 'cursor: auto;  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;' }}
                                     ) }}
-                                    {% if form_errors(form.name)|length > 0 %}
-                                <li class="clearfix">
-                                    <div class="note pull-right alert-danger">{{ form_errors(form.name) }}</div>
                                 </li>
+                                {% if form_errors(form.name)|length > 0 %}
+                                    <li class="clearfix" style="margin-left: 30px;">
+                                        <div class="note pull-left alert-danger">{{ form_errors(form.name) }}</div>
+                                    </li>
                                 {% endif %}
+                                <li class="input">
+                                    {{ form_widget(form.authority ,{ 'attr': { 'class': 'select2'  } }) }}
                                 </li>
+                                {% if form_errors(form.authority)|length > 0 %}
+                                    <li class="clearfix" style="margin-left: 30px;">
+                                        <div class="note pull-left alert-danger">{{ form_errors(form.authority) }}</div>
+                                    </li>
+                                {% endif %}
                                 <li class="input">
                                     {{ form_widget(form.description, { 'attr': {'rows': '5', 'placeholder': 'Description' }}
                                     ) }}
                                 </li>
                                 {% if form_errors(form.description)|length > 0 %}
-                                    <li class="clearfix">
-                                        <div class="note pull-right alert-danger">{{ form_errors(form.description) }}</div>
+                                    <li class="clearfix" style="margin-left: 30px;">
+                                        <div class="note pull-left alert-danger">{{ form_errors(form.description) }}</div>
                                     </li>
                                 {% endif %}
 
@@ -92,5 +118,6 @@
             {{ form_rest(form) }}
 
         </div>
+    </div>
     </div>
 {% endblock %}

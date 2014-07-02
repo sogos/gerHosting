@@ -1,0 +1,3 @@
+api.authorities:
+    type:         rest
+    resource:     Ger\Bundle\HostingBundle\Controller\AuthorityController
