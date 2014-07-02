@@ -50,7 +50,7 @@ class AuthorityController extends AbstractController
             if($request->getRequestFormat() == 'json') {
                 return array($authority);
             } else {
-                $this->get('session')->getFlashBag()->add("notice", "L'environnement a bien été crée");
+                $this->get('session')->getFlashBag()->add("notice", "L'autorité a bien été crée");
                 return new RedirectResponse($this->get('router')->generate('api_authorities_get_authorities'));
             }
         }
@@ -70,7 +70,7 @@ class AuthorityController extends AbstractController
         if($authority) {
             $this->getEntityManager()->remove($authority);
                 $this->getEntityManager()->flush();
-                $this->get('session')->getFlashBag()->add("notice", "L'environnement a bien été supprimé");
+                $this->get('session')->getFlashBag()->add("notice", "L'autorité a bien été supprimée");
         }
         return new RedirectResponse($this->get('router')->generate('api_authorities_get_authorities'));
     }
@@ -85,7 +85,7 @@ class AuthorityController extends AbstractController
     {
         $authority = $this->getAuthorityRepository()->find($id);
         if(!$authority) {
-            throw new NotFoundHttpException('Authority non trouvé');
+            throw new NotFoundHttpException('Autorité non trouvée');
         }
         $form = $this->createForm('ger_hosting_authority', $authority);
         $authorities = $this->getAuthorityRepository()->findAll();
@@ -108,7 +108,7 @@ class AuthorityController extends AbstractController
     {
         $authority = $this->getAuthorityRepository()->find($id);
         if(!$authority) {
-            throw new NotFoundHttpException('Authority non trouvé');
+            throw new NotFoundHttpException('Autorité non trouvée');
         }
         $form = $this->createForm('ger_hosting_authority', $authority);
         $form->handleRequest($request);
@@ -117,7 +117,7 @@ class AuthorityController extends AbstractController
             if($request->getRequestFormat() == 'json') {
                 return array($authority);
             } else {
-                $this->get('session')->getFlashBag()->add("notice", "L'environnement a bien été sauvegardé");
+                $this->get('session')->getFlashBag()->add("notice", "L'autorité a bien été sauvegardée");
                 return new RedirectResponse($this->get('router')->generate('api_authorities_get_authorities'));
             }
         }

@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07017466-aeb1-43da-8549-d0850bfbca58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/AuthorityType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Authority/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Entity/Environment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Form/Type/EnvironmentType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php" afterPath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,15 +31,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.html.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="list.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="67" selection-start="4541" selection-end="4541" vertical-scroll-proportion="0.80218446" vertical-offset="674" max-vertical-offset="1920">
+            <state line="37" column="90" selection-start="1418" selection-end="1418" vertical-scroll-proportion="-23.125" vertical-offset="0" max-vertical-offset="1920">
               <folding>
                 <element signature="e#12#41#0" expanded="true" />
-                <element signature="e#4193#4219#0" expanded="true" />
-                <element signature="e#4756#4782#0" expanded="true" />
-                <element signature="e#5385#5411#0" expanded="true" />
+                <element signature="e#4229#4255#0" expanded="true" />
+                <element signature="e#4792#4818#0" expanded="true" />
+                <element signature="e#5421#5447#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="525">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthorityController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="33" selection-start="3717" selection-end="3717" vertical-scroll-proportion="0.4265233" vertical-offset="1188" max-vertical-offset="2085">
+              <folding>
+                <element signature="e#55#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,7 +77,7 @@
       <file leaf-file-name="MenuBuilder.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="57" selection-start="1328" selection-end="1328" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="675">
+            <state line="37" column="59" selection-start="1152" selection-end="1152" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
@@ -128,26 +134,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authority.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="63" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="67" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <folding>
-                <marker date="1404302670074" expanded="true" signature="0:100" placeholder="ger_hosting_environment:" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -200,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/EnvironmentController.php" />
-        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing.yml" />
@@ -212,6 +197,7 @@
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Authority/list.html.twig" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php" />
         <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php" />
       </list>
     </option>
   </component>
@@ -1384,22 +1370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="1" selection-start="621" selection-end="621" vertical-scroll-proportion="-1.75" vertical-offset="130" max-vertical-offset="2085">
-          <folding>
-            <element signature="e#55#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/config/routing/authority.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="63" selection-start="103" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
@@ -1411,7 +1381,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="67" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
           <folding>
-            <marker date="1404302670074" expanded="true" signature="0:100" placeholder="ger_hosting_environment:" />
+            <marker date="1404302670074" expanded="true" signature="-1:-1" placeholder="ger_hosting_environment:" />
           </folding>
         </state>
       </provider>
@@ -1466,19 +1436,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/FrontendBundle/Menu/MenuBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="57" selection-start="1328" selection-end="1328" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="675">
+        <state line="37" column="59" selection-start="1152" selection-end="1152" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="675">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="67" selection-start="4541" selection-end="4541" vertical-scroll-proportion="0.80218446" vertical-offset="674" max-vertical-offset="1920">
+        <state line="37" column="90" selection-start="1418" selection-end="1418" vertical-scroll-proportion="-23.125" vertical-offset="0" max-vertical-offset="1920">
           <folding>
             <element signature="e#12#41#0" expanded="true" />
-            <element signature="e#4193#4219#0" expanded="true" />
-            <element signature="e#4756#4782#0" expanded="true" />
-            <element signature="e#5385#5411#0" expanded="true" />
+            <element signature="e#4229#4255#0" expanded="true" />
+            <element signature="e#4792#4818#0" expanded="true" />
+            <element signature="e#5421#5447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AbstractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Controller/AuthorityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="33" selection-start="3717" selection-end="3717" vertical-scroll-proportion="0.4265233" vertical-offset="1188" max-vertical-offset="2085">
+          <folding>
+            <element signature="e#55#108#0" expanded="true" />
           </folding>
         </state>
       </provider>

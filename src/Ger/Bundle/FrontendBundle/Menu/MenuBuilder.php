@@ -35,9 +35,9 @@ class MenuBuilder
             ->setChildrenAttribute('class', 'collapse')
              ->setChildrenAttribute('id', $uniqid)
                 ->addChild('Environnements', array('route' => 'api_environments_get_environments'))
-                    ->setAttribute('i-class', 'icon-hand-up');
+                    ->setAttribute('i-class', 'icon-picture');
                 $menu['Configuration']->addChild('Autorités', array('route' => 'api_authorities_get_authorities'))
-                    ->setAttribute('i-class', 'icon-money');
+                    ->setAttribute('i-class', 'icon-group');
         $menu->addChild('Logout', array('route' => 'fos_user_security_logout'))
             ->setAttribute('i-class', 'icon-user');
 
