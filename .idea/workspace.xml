@@ -66,11 +66,11 @@
       <file leaf-file-name="list.html.twig" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="84" selection-start="3593" selection-end="3593" vertical-scroll-proportion="0.7122128" vertical-offset="465" max-vertical-offset="1479">
+            <state line="40" column="64" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.8222491" vertical-offset="0" max-vertical-offset="1717">
               <folding>
                 <element signature="e#12#41#0" expanded="true" />
-                <element signature="e#801#838#0" expanded="true" />
-                <element signature="e#1063#1102#0" expanded="true" />
+                <element signature="e#1026#1063#0" expanded="true" />
+                <element signature="e#1300#1339#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -719,6 +719,23 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="07017466-aeb1-43da-8549-d0850bfbca58" name="Default" comment="" />
@@ -1051,11 +1068,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ger/Bundle/HostingBundle/Resources/views/Environment/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="84" selection-start="3593" selection-end="3593" vertical-scroll-proportion="0.7122128" vertical-offset="465" max-vertical-offset="1479">
+        <state line="40" column="64" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.8222491" vertical-offset="0" max-vertical-offset="1717">
           <folding>
             <element signature="e#12#41#0" expanded="true" />
-            <element signature="e#801#838#0" expanded="true" />
-            <element signature="e#1063#1102#0" expanded="true" />
+            <element signature="e#1026#1063#0" expanded="true" />
+            <element signature="e#1300#1339#0" expanded="true" />
           </folding>
         </state>
       </provider>
