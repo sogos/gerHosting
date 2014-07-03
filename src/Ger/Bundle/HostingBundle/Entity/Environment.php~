@@ -5,6 +5,7 @@ namespace Ger\Bundle\HostingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 /**
  * Environment
@@ -43,6 +44,7 @@ class Environment
     /**
      * @var authority
      * @ORM\ManyToOne(targetEntity="Ger\Bundle\HostingBundle\Entity\Authority", inversedBy="Environments")
+     * @NotNull()
      */
     private $authority;
 
@@ -100,5 +102,28 @@ class Environment
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set authority
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\Authority $authority
+     * @return Environment
+     */
+    public function setAuthority(\Ger\Bundle\HostingBundle\Entity\Authority $authority = null)
+    {
+        $this->authority = $authority;
+
+        return $this;
+    }
+
+    /**
+     * Get authority
+     *
+     * @return \Ger\Bundle\HostingBundle\Entity\Authority 
+     */
+    public function getAuthority()
+    {
+        return $this->authority;
     }
 }

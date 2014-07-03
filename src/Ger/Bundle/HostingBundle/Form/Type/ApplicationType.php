@@ -17,7 +17,16 @@ class ApplicationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name');
+            ->add('name')
+            ->add('depends_on_applications','entity', array(
+                'class' => 'Ger\Bundle\HostingBundle\Entity\Application',
+                'property' => 'name',
+                'multiple' => true,
+                'attr' => array(
+                    'class' => 'chzn-select',
+                    'data-placeholder' => 'Dépend des applications...'
+                )
+            ));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

@@ -28,6 +28,19 @@ class Application
      */
     private $name;
 
+    /**
+     * @var depends_on_applications
+     * @ORM\ManyToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\Application", inversedBy="is_required_by_applications")
+     * @ORM\JoinTable("applications_depends_applications")
+     */
+    private $depends_on_applications;
+
+    /**
+     * @var is_required_by_applications
+     * @ORM\ManyToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\Application", mappedBy="depends_on_applications")
+     */
+    private $is_required_by_applications;
+
 
     /**
      * Get id
@@ -61,4 +74,6 @@ class Application
     {
         return $this->name;
     }
+
+
 }
