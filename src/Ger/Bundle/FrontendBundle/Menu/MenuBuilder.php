@@ -28,16 +28,18 @@ class MenuBuilder
     {
         $menu = $this->factory->createItem('root', array('childrenAttributes' => array('class' => 'nav navbar-collapse collapse navbar-collapse-primary')));
         $uniqid = uniqid();
-        $menu->addChild('Configuration', array('uri' => '#' .$uniqid))
-            ->setAttribute('href', '#' .$uniqid)
+        $menu->addChild('Configuration', array('uri' => '#' . $uniqid))
+            ->setAttribute('href', '#' . $uniqid)
             ->setAttribute('i-class', 'icon-dashboard')
             ->setAttribute('class', 'dark-nav')
             ->setChildrenAttribute('class', 'collapse')
-             ->setChildrenAttribute('id', $uniqid)
-                ->addChild('Environnements', array('route' => 'api_environments_get_environments'))
-                    ->setAttribute('i-class', 'icon-picture');
-                $menu['Configuration']->addChild('Autorités', array('route' => 'api_authorities_get_authorities'))
-                    ->setAttribute('i-class', 'icon-group');
+            ->setChildrenAttribute('id', $uniqid)
+            ->addChild('Environnements', array('route' => 'api_environments_get_environments'))
+            ->setAttribute('i-class', 'icon-picture');
+        $menu['Configuration']->addChild('Autorités', array('route' => 'api_authorities_get_authorities'))
+            ->setAttribute('i-class', 'icon-legal');
+        $menu['Configuration']->addChild('Applications', array('route' => 'api_applications_get_applications'))
+            ->setAttribute('i-class', 'icon-bar-chart');
         $menu->addChild('Logout', array('route' => 'fos_user_security_logout'))
             ->setAttribute('i-class', 'icon-user');
 

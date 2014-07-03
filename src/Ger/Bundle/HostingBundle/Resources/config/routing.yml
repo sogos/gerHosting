@@ -3,3 +3,6 @@ ger_hosting_environment:
 
 ger_hosting_authority:
     resource: "@GerHostingBundle/Resources/config/routing/authority.yml"
+
+ger_hosting_application:
+    resource: "@GerHostingBundle/Resources/config/routing/application.yml"

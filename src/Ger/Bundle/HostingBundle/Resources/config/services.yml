@@ -7,3 +7,7 @@ services:
         class: Ger\Bundle\HostingBundle\Form\Type\AuthorityType
         tags:
             - { name: form.type, alias: ger_hosting_authority }
+    ger_hosting.form.type.application:
+        class: Ger\Bundle\HostingBundle\Form\Type\ApplicationType
+        tags:
+            - { name: form.type, alias: ger_hosting_application }

@@ -27,4 +27,11 @@ class AbstractController  extends Controller {
     public function getAuthorityRepository() {
         return $this->getEntityManager()->getRepository('GerHostingBundle:Authority');
     }
+
+    /**
+     * @return mixed
+     */
+    public function getApplicationRepository() {
+        return $this->getEntityManager()->getRepository('GerHostingBundle:Application');
+    }
 } 

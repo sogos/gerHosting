@@ -1,0 +1,3 @@
+api.applications:
+    type:         rest
+    resource:     Ger\Bundle\HostingBundle\Controller\ApplicationController
