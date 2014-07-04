@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use FOS\RestBundle\Controller\Annotations as FosRest;
 
 /**
  * Class ApplicationController
@@ -21,6 +22,7 @@ class ApplicationController extends AbstractController
 
     /**
      * @Template("@GerHosting/Application/list.html.twig")
+     * @FosRest\Route("applications")
      */
     public function getApplicationsAction()
     {
@@ -38,6 +40,7 @@ class ApplicationController extends AbstractController
 
     /**
      * @Template("@GerHosting/Application/list.html.twig")
+     * @FosRest\Route("applications")
      */
     public function postApplicationsAction(Request $request)
     {
@@ -63,7 +66,11 @@ class ApplicationController extends AbstractController
         );
     }
 
-
+    /**
+     * @param $id
+     * @return RedirectResponse
+     * @FosRest\Route("applications/{id}/delete")
+     */
     public function getDeleteApplicationAction($id)
     {
         $application = $this->getApplicationRepository()->find($id);
@@ -80,6 +87,7 @@ class ApplicationController extends AbstractController
      * @return array
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      * @Template("@GerHosting/Application/list.html.twig")
+     * @FosRest\Route("applications/{id}/edit")
      */
     public function getEditApplicationAction($id)
     {
@@ -103,6 +111,7 @@ class ApplicationController extends AbstractController
      * @return array|RedirectResponse
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      * @Template("@GerHosting/Application/list.html.twig")
+     * @FosRest\Route("applications/{id}/update")
      */
     public function postUpdateApplicationsAction(Request $request, $id)
     {

@@ -24,7 +24,11 @@ class ApplicationDatabaseType extends AbstractType
             ->add('description')
             ->add('type','entity', array(
                 'class' => 'Ger\Bundle\HostingBundle\Entity\DatabaseType',
-                'property' => 'name'
+                'property' => 'name',
+                'attr' => array(
+                    'class' => 'chzn-select',
+                    'data-placeholder' => 'Sélectionner un Type de Bdd'
+                )
             ));
     }
 

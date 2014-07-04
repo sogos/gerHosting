@@ -48,7 +48,7 @@
                                     </td>
                                     <td>
                                         {% for database in application.getRequireDatabases %}
-                                            <a href="#" rel="tooltip" data-placement="bottom" title data-original-title="{{ database.description }}"><span class="label label-green"><i class="icon icon-tasks" ></i> {{ database.name }}</span></a>
+                                            <a href="#" rel="tooltip" data-placement="bottom" title data-original-title="{{ database.type.name }}: {{ database.description }}"><span class="label label-green"><i class="icon icon-tasks" ></i> {{ database.name }}</span></a>
                                         {% endfor %}
                                     </td>
                                     <td>
