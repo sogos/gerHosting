@@ -2,7 +2,10 @@
 
 namespace Ger\Bundle\HostingBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\PersistentCollection;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Application
@@ -25,6 +28,7 @@ class Application
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @NotBlank()
      */
     private $name;
 
@@ -44,7 +48,7 @@ class Application
 
     /**
      * @var require_databases
-     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationDatabase", mappedBy="application", cascade={"PERSIST"})
+     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationDatabase", mappedBy="application", cascade={"PERSIST", "REMOVE"}, orphanRemoval=true)
      */
     private $require_databases;
 
@@ -159,30 +163,6 @@ class Application
     }
 
     /**
-     * Add require_databases
-     *
-     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases
-     * @return Application
-     */
-    public function addRequireDatabase(\Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases)
-    {
-        $this->require_databases[] = $requireDatabases;
-        $requireDatabases->setApplication($this);
-
-        return $this;
-    }
-
-    /**
-     * Remove require_databases
-     *
-     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases
-     */
-    public function removeRequireDatabase(\Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases)
-    {
-        $this->require_databases->removeElement($requireDatabases);
-    }
-
-    /**
      * Get require_databases
      *
      * @return \Doctrine\Common\Collections\Collection 
@@ -191,4 +171,25 @@ class Application
     {
         return $this->require_databases;
     }
+
+    /**
+     * @param ApplicationDatabase $applicationDatabase
+     * @return $this
+     */
+    public function addRequireDatabase(ApplicationDatabase $applicationDatabase) {
+        $this->require_databases[] = $applicationDatabase;
+        $applicationDatabase->setApplication($this);
+        return $this;
+    }
+
+    /**
+     * @param ApplicationDatabase $applicationDatabase
+     */
+    public function removeRequireDatabase(ApplicationDatabase $applicationDatabase) {
+        if($this->require_databases->contains($applicationDatabase)) {
+           $this->require_databases->removeElement($applicationDatabase);
+        }
+    }
+
+
 }
