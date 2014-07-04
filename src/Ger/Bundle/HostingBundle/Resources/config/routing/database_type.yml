@@ -1,0 +1,3 @@
+api.databasetypes:
+    type:         rest
+    resource:     Ger\Bundle\HostingBundle\Controller\DatabaseTypeController

@@ -34,4 +34,11 @@ class AbstractController  extends Controller {
     public function getApplicationRepository() {
         return $this->getEntityManager()->getRepository('GerHostingBundle:Application');
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDatabaseTypeRepository() {
+        return $this->getEntityManager()->getRepository('GerHostingBundle:DatabaseType');
+    }
 } 

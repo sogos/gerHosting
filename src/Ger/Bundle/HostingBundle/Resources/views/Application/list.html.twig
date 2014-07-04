@@ -2,7 +2,7 @@
 
 {%- block title -%}
     {{ parent() }}
-    Environnements
+    Applications
 {%- endblock -%}
 
 {% block maincontent %}
@@ -28,6 +28,7 @@
                                 <th>Nom</th>
                                 <th>Dépend de</th>
                                 <th>Requis par</th>
+                                <th>Bases de données</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
@@ -43,6 +44,11 @@
                                     <td>
                                         {% for rapplication in application.getIsRequiredByApplications %}
                                             <span class="label label-green">{{ rapplication.name }}</span>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for database in application.getRequireDatabases %}
+                                            <a href="#" rel="tooltip" data-placement="bottom" title data-original-title="{{ database.description }}"><span class="label label-green"><i class="icon icon-tasks" ></i> {{ database.name }}</span></a>
                                         {% endfor %}
                                     </td>
                                     <td>
@@ -103,6 +109,13 @@
                                     <div class="note pull-left alert-danger">{{ form_errors(form.depends_on_applications) }}</div>
                                 </li>
                                 {% endif %}
+                                <li>
+                                    <ul class="require_databases" data-prototype="{{ form_widget(form.require_databases.vars.prototype)|e }}">
+                                        {% for application_database in form.require_databases %}
+                                            <li>{{ form_widget(application_database) }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
 
                             </ul>
                         </div>
@@ -120,4 +133,43 @@
         </div>
     </div>
     </div>
+
+
+{% endblock %}
+
+{% block javascripts  %}
+    {{ parent() }}
+    <script>
+        var collectionHolder = $('ul.require_databases');
+
+        // ajoute un lien « add a tag »
+        var $addDatabaseLink = $('<a href="#" class="add_database_link btn btn-blue">Ajouter une Base de donnée</a>');
+        var $newLinkLi = $('<li></li>').append($addDatabaseLink);
+
+        jQuery(document).ready(function() {
+            // ajoute l'ancre « ajouter un tag » et li à la balise ul
+            collectionHolder.append($newLinkLi);
+
+            $addDatabaseLink.on('click', function(e) {
+                // empêche le lien de créer un « # » dans l'URL
+                e.preventDefault();
+
+                // ajoute un nouveau formulaire tag (voir le prochain bloc de code)
+                addDatabaseForm(collectionHolder, $newLinkLi);
+            });
+        });
+
+        function addDatabaseForm(collectionHolder, $newLinkLi) {
+            // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+            var prototype = collectionHolder.attr('data-prototype');
+
+            // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+            // la longueur de la collection courante
+            var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+
+            // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
+            var $newFormLi = $('<li></li>').append(newForm);
+            $newLinkLi.before($newFormLi);
+        }
+    </script>
 {% endblock %}

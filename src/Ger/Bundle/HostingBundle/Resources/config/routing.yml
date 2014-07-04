@@ -6,3 +6,6 @@ ger_hosting_authority:
 
 ger_hosting_application:
     resource: "@GerHostingBundle/Resources/config/routing/application.yml"
+
+ger_hosting_databasetype:
+    resource: "@GerHostingBundle/Resources/config/routing/database_type.yml"

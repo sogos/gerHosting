@@ -8,37 +8,35 @@
 
 namespace Ger\Bundle\HostingBundle\Form\Type;
 
+use Doctrine\ORM\EntityRepository;
+use Ger\Bundle\HostingBundle\Entity\Application;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class EnvironmentType extends AbstractType
+class ApplicationDatabaseType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('name')
             ->add('description')
-            ->add('authority', 'entity',array(
-                'class' => 'Ger\Bundle\HostingBundle\Entity\Authority',
-                'property' => 'name',
-                'empty_value' => 'Sélectionnez une autorité',
-                'attr' => array(
-                    'class' => 'chzn-select',
-                    'data-placeholder' => 'Sélectionnez une autorité'
-                )
-            ) );
+            ->add('type','entity', array(
+                'class' => 'Ger\Bundle\HostingBundle\Entity\DatabaseType',
+                'property' => 'name'
+            ));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Ger\Bundle\HostingBundle\Entity\Environment'
+            'data_class' => 'Ger\Bundle\HostingBundle\Entity\ApplicationDatabase'
         ));
     }
 
     public function getName()
     {
-        return 'ger_hosting_environment';
+        return 'ger_hosting_application_database';
     }
 }

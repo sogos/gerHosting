@@ -40,6 +40,9 @@ class MenuBuilder
             ->setAttribute('i-class', 'icon-legal');
         $menu['Configuration']->addChild('Applications', array('route' => 'api_applications_get_applications'))
             ->setAttribute('i-class', 'icon-bar-chart');
+        $menu['Configuration']->addChild('Types BDD', array('route' => 'api_databasetypes_get_database_types'))
+            ->setAttribute('i-class', 'icon-tasks');
+
         $menu->addChild('Logout', array('route' => 'fos_user_security_logout'))
             ->setAttribute('i-class', 'icon-user');
 

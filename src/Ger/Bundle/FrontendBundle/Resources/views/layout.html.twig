@@ -98,14 +98,19 @@
 
     </div>
     <div class="main-content">
-        <script>
-            $(document).ready(function () {
-                {% for flashMessage in app.session.flashbag.get('notice') %}
-                alertify.log("{{ flashMessage }}", "success");
-                {% endfor %}
-            });
-        </script>
+
 
         {% block maincontent %}{% endblock %}
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+    $(document).ready(function () {
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+        alertify.log("{{ flashMessage }}", "success");
+        {% endfor %}
+    });
+    </script>
 {% endblock %}

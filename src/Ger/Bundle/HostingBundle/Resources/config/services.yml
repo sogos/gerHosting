@@ -11,3 +11,11 @@ services:
         class: Ger\Bundle\HostingBundle\Form\Type\ApplicationType
         tags:
             - { name: form.type, alias: ger_hosting_application }
+    ger_hosting.form.type.application_database:
+        class: Ger\Bundle\HostingBundle\Form\Type\ApplicationDatabaseType
+        tags:
+            - { name: form.type, alias: ger_hosting_application_database }
+    ger_hosting.form.type.database_type:
+        class: Ger\Bundle\HostingBundle\Form\Type\DatabaseTypeType
+        tags:
+            - { name: form.type, alias: ger_hosting_databasetype }

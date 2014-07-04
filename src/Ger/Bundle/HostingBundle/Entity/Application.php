@@ -43,6 +43,12 @@ class Application
 
 
     /**
+     * @var require_databases
+     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationDatabase", mappedBy="application", cascade={"PERSIST"})
+     */
+    private $require_databases;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -83,6 +89,7 @@ class Application
     {
         $this->depends_on_applications = new \Doctrine\Common\Collections\ArrayCollection();
         $this->is_required_by_applications = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->require_databases = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -149,5 +156,39 @@ class Application
     public function getIsRequiredByApplications()
     {
         return $this->is_required_by_applications;
+    }
+
+    /**
+     * Add require_databases
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases
+     * @return Application
+     */
+    public function addRequireDatabase(\Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases)
+    {
+        $this->require_databases[] = $requireDatabases;
+        $requireDatabases->setApplication($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove require_databases
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases
+     */
+    public function removeRequireDatabase(\Ger\Bundle\HostingBundle\Entity\ApplicationDatabase $requireDatabases)
+    {
+        $this->require_databases->removeElement($requireDatabases);
+    }
+
+    /**
+     * Get require_databases
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRequireDatabases()
+    {
+        return $this->require_databases;
     }
 }

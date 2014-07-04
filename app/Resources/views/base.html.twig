@@ -24,6 +24,11 @@
         <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css" />
         {% endstylesheets %}
     {% endblock %}
+
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
     {%  block javascripts %}
         {% javascripts
         '@GerFrontendBundle/Resources/public/javascripts/application.js'
@@ -33,11 +38,6 @@
         %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
-    {% endblock %}
-
-</head>
-<body>
-    {% block body %}
     {% endblock %}
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 {%- block title -%}
     {{ parent() }}
-    Environnements
+    Types de base de donnée
 {%- endblock -%}
 
 {% block maincontent %}
@@ -18,31 +18,29 @@
             <div class="box">
                 <div class="box-header">
 
-                    <span class="title">Liste des Environnements</span>
+                    <span class="title">Liste des Types de base de donnée</span>
                 </div>
-
                 <div class="box-content">
-                    {% if environments|length > 0 %}
+                    {% if databasetypes|length > 0 %}
                         <table class="table">
                             <thead>
                             <tr>
                                 <th>Nom</th>
-                                <th>Autorité</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
-                            {% for environment in environments %}
+                            {% for databasetype in databasetypes %}
                                 <tbody>
                                 <tr>
-                                    <td>{{ environment.name }}</td>
-                                    <td><span class="label label-dark-red"><i class="icon icon-group"></i> {{ environment.authority.name }}</span></td>
+                                    <td>{{ databasetype.name }}</td>
+
                                     <td>
 
                                         <a class="btn btn-gold"
-                                           href="{{ path("api_environments_get_edit_environment",{ 'id': environment.id }) }}">Editer
+                                           href="{{ path("api_databasetypes_get_edit_database_type",{ 'id': databasetype.id }) }}">Editer
                                             <i class="icon icon-arrow-right"></i></a>
                                         <a class="btn btn-red"
-                                           href="{{ path("api_environments_get_delete_environment",{ 'id': environment.id }) }}">Supprimer</a>
+                                           href="{{ path("api_databasetypes_get_delete_database_type",{ 'id': databasetype.id }) }}">Supprimer</a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -50,7 +48,7 @@
                         </table>
                     {% else %}
                         <div class="">
-                            <div class="col-lg-4 col-lg-offset-4">Aucun environment défini</div>
+                            <div class="col-lg-4 col-lg-offset-4">Aucun Type de base de donnée défini</div>
                         </div>
                     {% endif %}
                 </div>
@@ -63,9 +61,9 @@
                 <div class="box-header">
                     <span class="title">
                         {% if type == 'creation' %}
-                            Ajouter un Environment
+                            Ajouter un Type de Base de donnée
                         {% else %}
-                            Modifier l'Environnement
+                            Modifier le Type de Base de donnée
                         {% endif %}
                     </span>
                 </div>
@@ -80,30 +78,12 @@
                                 <li class="input">
                                     {{ form_widget(form.name, { 'attr': { 'placeholder': 'Nom', 'style': 'cursor: auto;  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;' }}
                                     ) }}
+                                    {% if form_errors(form.name)|length > 0 %}
                                 </li>
-                                {% if form_errors(form.name)|length > 0 %}
-                                    <li class="clearfix" style="margin-left: 30px;">
-                                        <div class="note pull-left alert-danger">{{ form_errors(form.name) }}</div>
-                                    </li>
-                                {% endif %}
-                                <li class="input">
-                                    {{ form_widget(form.authority) }}
+                                <li class="clearfix" style="margin-left: 30px;">
+                                    <div class="note pull-left alert-danger">{{ form_errors(form.name) }}</div>
                                 </li>
-                                {% if form_errors(form.authority)|length > 0 %}
-                                    <li class="clearfix" style="margin-left: 30px;">
-                                        <div class="note pull-left alert-danger">{{ form_errors(form.authority) }}</div>
-                                    </li>
                                 {% endif %}
-                                <li class="input">
-                                    {{ form_widget(form.description, { 'attr': {'rows': '5', 'placeholder': 'Description' }}
-                                    ) }}
-                                </li>
-                                {% if form_errors(form.description)|length > 0 %}
-                                    <li class="clearfix" style="margin-left: 30px;">
-                                        <div class="note pull-left alert-danger">{{ form_errors(form.description) }}</div>
-                                    </li>
-                                {% endif %}
-
                             </ul>
                         </div>
 
@@ -120,4 +100,6 @@
         </div>
     </div>
     </div>
+
+
 {% endblock %}
