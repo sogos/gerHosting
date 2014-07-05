@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row padded">
-        <div class="col-lg-9 col-md-12">
+        <div class="col-lg-8 col-md-12">
             <div class="box">
                 <div class="box-header">
 
@@ -48,7 +48,10 @@
                                     </td>
                                     <td>
                                         {% for database in application.getRequireDatabases %}
-                                            <a href="#" rel="tooltip" data-placement="bottom" title data-original-title="{{ database.type.name }}: {{ database.description }}"><span class="label label-green"><i class="icon icon-tasks" ></i> {{ database.name }}</span></a>
+                                            <a href="#" rel="tooltip" data-placement="bottom" title
+                                               data-original-title="{{ database.type.name }}: {{ database.description }}"><span
+                                                        class="label label-green"><i
+                                                            class="icon icon-tasks"></i> {{ database.name }}</span></a>
                                         {% endfor %}
                                     </td>
                                     <td>
@@ -72,7 +75,7 @@
 
             </div>
         </div>
-        <div class="col-lg-3 col-md-4">
+        <div class="col-lg-4 col-md-4">
 
             <div class="box">
                 <div class="box-header">
@@ -103,19 +106,63 @@
                                 {% endif %}
                                 <li>
                                     {{ form_widget(form.depends_on_applications) }}
-                                    {% if form_errors(form.depends_on_applications)|length > 0 %}
                                 </li>
-                                <li class="clearfix" style="margin-left: 30px;">
-                                    <div class="note pull-left alert-danger">{{ form_errors(form.depends_on_applications) }}</div>
-                                </li>
+                                {% if form_errors(form.depends_on_applications)|length > 0 %}
+
+                                    <li class="clearfix" style="margin-left: 30px;">
+                                        <div class="note pull-left alert-danger">{{ form_errors(form.depends_on_applications) }}</div>
+                                    </li>
                                 {% endif %}
                                 <li>
-                                    <ul class="require_databases" data-prototype="{{ form_widget(form.require_databases.vars.prototype)|e }}">
+                                    {# <ul class="require_databases" data-prototype="&lt;li class=&quot;thumbnail padded&quot;&gt;{{ form_widget(form.require_databases.vars.prototype)|e }}&lt;/&gt;"> #}
+                                    <ul class="require_databases"
+                                        data-prototype="&lt;ul class=&quot;prototype_require_databases&quot;&gt;&lt;div class=&quot;row thumbnail&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;label label-green&quot;&gt;Base de donn&eacute;e&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;li class=&quot;input&quot;&gt;{{ form_widget(form.require_databases.vars.prototype.name)|e }}&lt;/li&gt;&lt;li&gt;{{ form_widget(form.require_databases.vars.prototype.type)|e }}&lt;/li&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;li&gt;{{ form_widget(form.require_databases.vars.prototype.description)|e }}&lt;/li&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;">
                                         {% for application_database in form.require_databases %}
-                                            <li>{{ form_widget(application_database) }}</li>
+
+                                        {# <ul class="padded prototype_require_databases"> #}
+
+                                        <li class="addEmbed">
+                                            <ul class="prototype_require_databases">
+                                                <div class="row thumbnail">
+                                                    <div class="col-lg-6"><span class="label label-green">Base de donnée</span>
+                                                        <p></p>
+                                                        <li class="input">
+                                                            {{ form_widget(application_database.name) }}
+                                                        </li>
+                                                        {% if form_errors(application_database.name)|length > 0 %}
+                                                            <li class="clearfix" style="margin-left: 30px;">
+                                                                <div class="note pull-left alert-danger">{{ form_errors(application_database.name) }}</div>
+                                                            </li>
+                                                        {% endif %}
+
+                                                        <li>
+                                                            {{ form_widget(application_database.type) }}
+                                                        </li>
+                                                        {% if form_errors(application_database.type)|length > 0 %}
+                                                            <li class="clearfix" style="margin-left: 30px;">
+                                                                <div class="note pull-left alert-danger">{{ form_errors(application_database.type) }}</div>
+                                                            </li>
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <li>
+                                                            {{ form_widget(application_database.description) }}
+                                                        </li>
+                                                        {% if form_errors(application_database.description)|length > 0 %}
+
+                                                            <li class="clearfix" style="margin-left: 30px;">
+                                                                <div class="note pull-left alert-danger">{{ form_errors(application_database.description) }}</div>
+                                                            </li>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </li>
                                         {% endfor %}
                                     </ul>
-                                </li>
+
+                            </ul>
+                            </li>
 
                             </ul>
                         </div>
@@ -138,70 +185,75 @@
 
 {% endblock %}
 
-{% block stylesheets  %}
-       {{ parent() }}
-        <style>
-            .addEmbed {
-                margin-top: 20px;
-            }
-            ul.require_databases {
-                list-style-type: none;
-            }
-        </style>
-{% endblock  %}
-
-    {% block javascripts  %}
+{% block stylesheets %}
     {{ parent() }}
-    <script>
-        var collectionHolder = $('ul.require_databases');
-        collectionHolder.find('li').each(function() {
-            addDatabaseFormDeleteLink($(this));
-        });
-
-        // ajoute un lien « add a tag »
-        var $addDatabaseLink = $('<a href="#" class="add_database_link btn btn-success btn-xs addEmbed pull-right"><i class="icon icon-plus"></i> Ajouter une Base de donnée</a>');
-        var $newLinkLi = $('<li></li>').append($addDatabaseLink);
-
-        jQuery(document).ready(function() {
-            // ajoute l'ancre « ajouter un tag » et li à la balise ul
-            collectionHolder.append($newLinkLi);
-
-            $addDatabaseLink.on('click', function(e) {
-                // empêche le lien de créer un « # » dans l'URL
-                e.preventDefault();
-
-                // ajoute un nouveau formulaire tag (voir le prochain bloc de code)
-                addDatabaseForm(collectionHolder, $newLinkLi);
-
-            });
-        });
-
-        function addDatabaseForm(collectionHolder, $newLinkLi) {
-            // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
-            var prototype = collectionHolder.attr('data-prototype');
-
-            // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
-            // la longueur de la collection courante
-            var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
-
-            // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
-            var $newFormLi = $('<li></li>').append(newForm);
-            $newLinkLi.before($newFormLi);
-            addDatabaseFormDeleteLink($newFormLi);
-            $('select.chzn-select').select2();
+    <style>
+        .addEmbed {
+            margin-top: 20px;
         }
 
-        function addDatabaseFormDeleteLink($tagFormLi) {
-            var $removeFormA = $('<a class="btn btn-red btn-xs" href="#"><i class="icon icon-remove"></i> Retirer</a>');
-            $tagFormLi.append($removeFormA);
-
-            $removeFormA.on('click', function(e) {
-                // empêche le lien de créer un « # » dans l'URL
-                e.preventDefault();
-
-                // supprime l'élément li pour le formulaire de tag
-                $tagFormLi.remove();
-            });
+        ul.require_databases {
+            list-style-type: none;
         }
-    </script>
+
+        ul.prototype_require_databases {
+            list-style-type: none;
+        }
+    </style>
 {% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script>
+            var collectionHolder = $('ul.require_databases');
+            collectionHolder.find('li.addEmbed').each(function () {
+                addDatabaseFormDeleteLink($(this));
+            });
+
+            // ajoute un lien « add a tag »
+            var $addDatabaseLink = $('<a href="#" class="add_database_link btn btn-success btn-xs addEmbed pull-right"><i class="icon icon-plus"></i> Ajouter une Base de donnée</a>');
+            var $newLinkLi = $('<li></li>').append($addDatabaseLink);
+
+            jQuery(document).ready(function () {
+                // ajoute l'ancre « ajouter un tag » et li à la balise ul
+                collectionHolder.append($newLinkLi);
+
+                $addDatabaseLink.on('click', function (e) {
+                    // empêche le lien de créer un « # » dans l'URL
+                    e.preventDefault();
+
+                    // ajoute un nouveau formulaire tag (voir le prochain bloc de code)
+                    addDatabaseForm(collectionHolder, $newLinkLi);
+
+                });
+            });
+
+            function addDatabaseForm(collectionHolder, $newLinkLi) {
+                // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+                var prototype = collectionHolder.attr('data-prototype');
+
+                // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+                // la longueur de la collection courante
+                var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+
+                // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
+                var $newFormLi = $('<li class="addEmbed"></li>').append(newForm);
+                $newLinkLi.before($newFormLi);
+                addDatabaseFormDeleteLink($newFormLi);
+                $('select.chzn-select').select2();
+            }
+
+            function addDatabaseFormDeleteLink($tagFormLi) {
+                var $removeFormA = $('<a class="btn btn-red btn-xs" href="#"><i class="icon icon-remove"></i> Retirer</a>');
+                $tagFormLi.append($removeFormA);
+
+                $removeFormA.on('click', function (e) {
+                    // empêche le lien de créer un « # » dans l'URL
+                    e.preventDefault();
+
+                    // supprime l'élément li pour le formulaire de tag
+                    $tagFormLi.remove();
+                });
+            }
+        </script>
+    {% endblock %}

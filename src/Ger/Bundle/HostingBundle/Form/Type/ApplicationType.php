@@ -51,14 +51,15 @@ class ApplicationType extends AbstractType
                 'prototype' => true,
                 'by_reference' => false,
                 'type' => 'ger_hosting_application_database',
-
+                'cascade_validation' => true
             ));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Ger\Bundle\HostingBundle\Entity\Application'
+            'data_class' => 'Ger\Bundle\HostingBundle\Entity\Application',
+            'cascade_validation' => true
         ));
     }
 
