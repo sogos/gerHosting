@@ -1,0 +1,3 @@
+api.cachingtypes:
+    type:         rest
+    resource:     Ger\Bundle\HostingBundle\Controller\CachingTypeController

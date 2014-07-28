@@ -41,4 +41,25 @@ class AbstractController  extends Controller {
     public function getDatabaseTypeRepository() {
         return $this->getEntityManager()->getRepository('GerHostingBundle:DatabaseType');
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCachingTypeRepository() {
+        return $this->getEntityManager()->getRepository('GerHostingBundle:CachingType');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRabbitMQExchangeRepository() {
+        return $this->getEntityManager()->getRepository('GerHostingBundle:RabbitMQExchange');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRabbitMQQueueRepository() {
+        return $this->getEntityManager()->getRepository('GerHostingBundle:RabbitMQQueue');
+    }
 } 

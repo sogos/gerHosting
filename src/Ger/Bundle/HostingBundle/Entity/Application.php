@@ -34,23 +34,42 @@ class Application
 
     /**
      * @var depends_on_applications
-     * @ORM\ManyToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\Application", inversedBy="is_required_by_applications")
+     * @ORM\ManyToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\Application", inversedBy="is_required_by_applications", fetch="EAGER")
      * @ORM\JoinTable("applications_depends_applications")
      */
     private $depends_on_applications;
 
     /**
      * @var is_required_by_applications
-     * @ORM\ManyToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\Application", mappedBy="depends_on_applications")
+     * @ORM\ManyToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\Application", mappedBy="depends_on_applications", fetch="EAGER")
      */
     private $is_required_by_applications;
 
 
     /**
      * @var require_databases
-     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationDatabase", mappedBy="application", cascade={"PERSIST", "REMOVE"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationDatabase", mappedBy="application", cascade={"PERSIST", "REMOVE"}, orphanRemoval=true, fetch="EAGER")
      */
     private $require_databases;
+
+    /**
+     * @var caching_mechanisms
+     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationCaching", mappedBy="application", cascade={"PERSIST", "REMOVE"}, orphanRemoval=true, fetch="EAGER")
+     */
+    private $caching_mechanisms;
+
+    /**
+     * @var produce_messages
+     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationProduceMessage", mappedBy="application", cascade={"PERSIST", "REMOVE"}, orphanRemoval=true, fetch="EAGER")
+     */
+    private $produce_messages;
+
+    /**
+     * @var consume_messages
+     * @ORM\OneToMany(targetEntity="Ger\Bundle\HostingBundle\Entity\ApplicationConsumeMessage", mappedBy="application", cascade={"PERSIST", "REMOVE"}, orphanRemoval=true, fetch="EAGER")
+     */
+    private $consume_messages;
+
 
     /**
      * Get id
@@ -94,6 +113,9 @@ class Application
         $this->depends_on_applications = new \Doctrine\Common\Collections\ArrayCollection();
         $this->is_required_by_applications = new \Doctrine\Common\Collections\ArrayCollection();
         $this->require_databases = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->caching_mechanisms  = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->produce_messages = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->consume_messages = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -192,4 +214,107 @@ class Application
     }
 
 
+
+    /**
+     * Add caching_mechanisms
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationCaching $cachingMechanisms
+     * @return Application
+     */
+    public function addCachingMechanism(\Ger\Bundle\HostingBundle\Entity\ApplicationCaching $cachingMechanisms)
+    {
+        $this->caching_mechanisms[] = $cachingMechanisms;
+        $cachingMechanisms->setApplication($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove caching_mechanisms
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationCaching $cachingMechanisms
+     */
+    public function removeCachingMechanism(\Ger\Bundle\HostingBundle\Entity\ApplicationCaching $cachingMechanisms)
+    {
+        $this->caching_mechanisms->removeElement($cachingMechanisms);
+    }
+
+    /**
+     * Get caching_mechanisms
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCachingMechanisms()
+    {
+        return $this->caching_mechanisms;
+    }
+
+
+    /**
+     * Add produce_messages
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationProduceMessage $produceMessages
+     * @return Application
+     */
+    public function addProduceMessage(\Ger\Bundle\HostingBundle\Entity\ApplicationProduceMessage $produceMessages)
+    {
+        $this->produce_messages[] = $produceMessages;
+        $produceMessages->setApplication($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove produce_messages
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationProduceMessage $produceMessages
+     */
+    public function removeProduceMessage(\Ger\Bundle\HostingBundle\Entity\ApplicationProduceMessage $produceMessages)
+    {
+        $this->produce_messages->removeElement($produceMessages);
+    }
+
+    /**
+     * Get produce_messages
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProduceMessages()
+    {
+        return $this->produce_messages;
+    }
+
+    /**
+     * Add consume_messages
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationConsumeMessage $consumeMessages
+     * @return Application
+     */
+    public function addConsumeMessage(\Ger\Bundle\HostingBundle\Entity\ApplicationConsumeMessage $consumeMessages)
+    {
+        $this->consume_messages[] = $consumeMessages;
+        $consumeMessages->setApplication($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove consume_messsages
+     *
+     * @param \Ger\Bundle\HostingBundle\Entity\ApplicationConsumeMessage $consumeMessages
+     */
+    public function removeConsumeMessage(\Ger\Bundle\HostingBundle\Entity\ApplicationConsumeMessage $consumeMessages)
+    {
+        $this->consume_messsages->removeElement($consumeMessages);
+    }
+
+    /**
+     * Get consume_messages
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getConsumeMessages()
+    {
+        return $this->consume_messages;
+    }
 }

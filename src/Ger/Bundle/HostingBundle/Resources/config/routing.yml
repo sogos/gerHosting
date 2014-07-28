@@ -9,3 +9,12 @@ ger_hosting_application:
 
 ger_hosting_databasetype:
     resource: "@GerHostingBundle/Resources/config/routing/database_type.yml"
+
+ger_hosting_cachingtype:
+    resource: "@GerHostingBundle/Resources/config/routing/caching_type.yml"
+
+ger_hosting_rabbitmqexchange:
+    resource: "@GerHostingBundle/Resources/config/routing/rabbitmq_exchange.yml"
+
+ger_hosting_rabbitmqqueue:
+    resource: "@GerHostingBundle/Resources/config/routing/rabbitmq_queue.yml"

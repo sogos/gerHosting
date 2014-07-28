@@ -52,7 +52,32 @@ class ApplicationType extends AbstractType
                 'by_reference' => false,
                 'type' => 'ger_hosting_application_database',
                 'cascade_validation' => true
-            ));
+            ))
+            ->add('caching_mechanisms', 'collection', array(
+                'allow_add' => true,
+                'allow_delete' => true,
+                'prototype' => true,
+                'by_reference' => false,
+                'type' => 'ger_hosting_application_caching',
+                'cascade_validation' => true
+            ))
+            ->add('produce_messages', 'collection', array(
+                'allow_add' => true,
+                'allow_delete' => true,
+                'prototype' => true,
+                'by_reference' => false,
+                'type' => 'ger_hosting_application_produce_message',
+                'cascade_validation' => true
+            ))
+            ->add('consume_messages', 'collection', array(
+                'allow_add' => true,
+                'allow_delete' => true,
+                'prototype' => true,
+                'by_reference' => false,
+                'type' => 'ger_hosting_application_consume_message',
+                'cascade_validation' => true
+            ))
+        ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

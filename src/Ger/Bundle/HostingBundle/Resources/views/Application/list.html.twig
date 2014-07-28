@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row padded">
-        <div class="col-lg-8 col-md-12">
+        <div class="col-lg-12 col-md-12">
             <div class="box">
                 <div class="box-header">
 
@@ -29,6 +29,7 @@
                                 <th>Dépend de</th>
                                 <th>Requis par</th>
                                 <th>Bases de données</th>
+                                <th>Mise en cache</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
@@ -49,9 +50,17 @@
                                     <td>
                                         {% for database in application.getRequireDatabases %}
                                             <a href="#" rel="tooltip" data-placement="bottom" title
-                                               data-original-title="{{ database.type.name }}: {{ database.description }}"><span
+                                               data-original-title="{{ database.description }}"><span
                                                         class="label label-green"><i
-                                                            class="icon icon-tasks"></i> {{ database.name }}</span></a>
+                                                            class="icon icon-tasks"></i> {{ database.type.name }} {{ database.name }}</span></a>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for caching_mechanism in application.getCachingMechanisms %}
+                                            <a href="#" rel="tooltip" data-placement="bottom" title
+                                               data-original-title="{{ caching_mechanism.resolveSsi }}: {{ caching_mechanism.description }}"><span
+                                                        class="label label-blue"><i
+                                                            class="icon icon-tasks"></i> {{ caching_mechanism.type.name }}</span></a>
                                         {% endfor %}
                                     </td>
                                     <td>
@@ -75,7 +84,7 @@
 
             </div>
         </div>
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-6 col-md-4">
 
             <div class="box">
                 <div class="box-header">
@@ -113,60 +122,204 @@
                                         <div class="note pull-left alert-danger">{{ form_errors(form.depends_on_applications) }}</div>
                                     </li>
                                 {% endif %}
-                                <li>
+                                <li class="embed_block">
                                     {# <ul class="require_databases" data-prototype="&lt;li class=&quot;thumbnail padded&quot;&gt;{{ form_widget(form.require_databases.vars.prototype)|e }}&lt;/&gt;"> #}
                                     <ul class="require_databases"
-                                        data-prototype="&lt;ul class=&quot;prototype_require_databases&quot;&gt;&lt;div class=&quot;row thumbnail&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;label label-green&quot;&gt;Base de donn&eacute;e&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;li class=&quot;input&quot;&gt;{{ form_widget(form.require_databases.vars.prototype.name)|e }}&lt;/li&gt;&lt;li&gt;{{ form_widget(form.require_databases.vars.prototype.type)|e }}&lt;/li&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;li&gt;{{ form_widget(form.require_databases.vars.prototype.description)|e }}&lt;/li&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;">
+                                        data-prototype="&lt;ul class=&quot;prototype_require_databases&quot;&gt;&lt;div class=&quot;row sub_block&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;label label-green&quot;&gt;Base de donn&eacute;e&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;li class=&quot;input&quot;&gt;{{ form_widget(form.require_databases.vars.prototype.name)|e }}&lt;/li&gt;&lt;li&gt;{{ form_widget(form.require_databases.vars.prototype.type)|e }}&lt;/li&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;li&gt;{{ form_widget(form.require_databases.vars.prototype.description)|e }}&lt;/li&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;">
                                         {% for application_database in form.require_databases %}
 
-                                        {# <ul class="padded prototype_require_databases"> #}
+                                            {# <ul class="padded prototype_require_databases"> #}
 
-                                        <li class="addEmbed">
-                                            <ul class="prototype_require_databases">
-                                                <div class="row thumbnail">
-                                                    <div class="col-lg-6"><span class="label label-green">Base de donnée</span>
-                                                        <p></p>
-                                                        <li class="input">
-                                                            {{ form_widget(application_database.name) }}
-                                                        </li>
-                                                        {% if form_errors(application_database.name)|length > 0 %}
-                                                            <li class="clearfix" style="margin-left: 30px;">
-                                                                <div class="note pull-left alert-danger">{{ form_errors(application_database.name) }}</div>
-                                                            </li>
-                                                        {% endif %}
+                                            <li class="addEmbed">
+                                                <ul class="prototype_require_databases">
+                                                    <div class="row sub_block">
+                                                        <div class="col-lg-6"><span class="label label-green">Base de donnée</span>
 
-                                                        <li>
-                                                            {{ form_widget(application_database.type) }}
-                                                        </li>
-                                                        {% if form_errors(application_database.type)|length > 0 %}
-                                                            <li class="clearfix" style="margin-left: 30px;">
-                                                                <div class="note pull-left alert-danger">{{ form_errors(application_database.type) }}</div>
+                                                            <p></p>
+                                                            <li class="input">
+                                                                {{ form_widget(application_database.name) }}
                                                             </li>
-                                                        {% endif %}
+                                                            {% if form_errors(application_database.name)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(application_database.name) }}</div>
+                                                                </li>
+                                                            {% endif %}
+
+                                                            <li>
+                                                                {{ form_widget(application_database.type) }}
+                                                            </li>
+                                                            {% if form_errors(application_database.type)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(application_database.type) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <li>
+                                                                {{ form_widget(application_database.description) }}
+                                                            </li>
+                                                            {% if form_errors(application_database.description)|length > 0 %}
+
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(application_database.description) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-6">
-                                                        <li>
-                                                            {{ form_widget(application_database.description) }}
-                                                        </li>
-                                                        {% if form_errors(application_database.description)|length > 0 %}
-
-                                                            <li class="clearfix" style="margin-left: 30px;">
-                                                                <div class="note pull-left alert-danger">{{ form_errors(application_database.description) }}</div>
-                                                            </li>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                            </ul>
-                                        </li>
+                                                </ul>
+                                            </li>
                                         {% endfor %}
                                     </ul>
+                                </li>
+                                <li class="embed_block">
+                                    {# <ul class="require_databases" data-prototype="&lt;li class=&quot;thumbnail padded&quot;&gt;{{ form_widget(form.require_databases.vars.prototype)|e }}&lt;/&gt;"> #}
+                                    <ul class="caching_mechanisms"
+                                        data-prototype="&lt;ul class=&quot;prototype_caching_mechanisms&quot;&gt;&lt;div class=&quot;row sub_block&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;label label-blue&quot;&gt;Mise en cache&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;li class=&quot;input&quot;&gt;{{ form_widget(form.caching_mechanisms.vars.prototype.resolve_ssi)|e }} {{ form_label(form.caching_mechanisms.vars.prototype.resolve_ssi)|e }}&lt;/li&gt;&lt;li&gt;{{ form_widget(form.caching_mechanisms.vars.prototype.type)|e }}&lt;/li&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;li&gt;{{ form_widget(form.caching_mechanisms.vars.prototype.description)|e }}&lt;/li&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;">
+                                        {% for caching_mechanism in form.caching_mechanisms %}
 
-                            </ul>
-                            </li>
+                                            {# <ul class="padded prototype_require_databases"> #}
 
+                                            <li class="addEmbedCaching">
+                                                <ul class="prototype_caching_mechanisms">
+                                                    <div class="row sub_block">
+                                                        <div class="col-lg-6"><span class="label label-blue">Mise en cache</span>
+
+                                                            <p></p>
+                                                            <li class="input">
+                                                                {{ form_widget(caching_mechanism.resolve_ssi) }} {{ form_label(caching_mechanism.resolve_ssi) }}
+                                                            </li>
+                                                            {% if form_errors(caching_mechanism.resolve_ssi)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(caching_mechanism.resolve_ssi) }}</div>
+                                                                </li>
+                                                            {% endif %}
+
+                                                            <li>
+                                                                {{ form_widget(caching_mechanism.type) }}
+                                                            </li>
+                                                            {% if form_errors(caching_mechanism.type)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(caching_mechanism.type) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <li>
+                                                                {{ form_widget(caching_mechanism.description) }}
+                                                            </li>
+                                                            {% if form_errors(caching_mechanism.description)|length > 0 %}
+
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(caching_mechanism.description) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li class="embed_block">
+                                    {# <ul class="require_databases" data-prototype="&lt;li class=&quot;thumbnail padded&quot;&gt;{{ form_widget(form.require_databases.vars.prototype)|e }}&lt;/&gt;"> #}
+                                    <ul class="produce_messages"
+                                        data-prototype="&lt;ul class=&quot;prototype_producer&quot;&gt;&lt;div class=&quot;row sub_block&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;label label-blue&quot;&gt;Emetteur RabbitMQ&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;li class=&quot;input&quot;&gt;{{ form_widget(form.produce_messages.vars.prototype.description)|e }}&lt;/li&gt;&lt;li&gt;{{ form_widget(form.produce_messages.vars.prototype.exchange)|e }}&lt;/li&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;li&gt;{{ form_widget(form.caching_mechanisms.vars.prototype.description)|e }}&lt;/li&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;">
+                                        {% for producer in form.produce_messages %}
+
+                                            {# <ul class="padded prototype_require_databases"> #}
+
+                                            <li class="addEmbedProducer">
+                                                <ul class="prototype_producer">
+                                                    <div class="row sub_block">
+                                                        <div class="col-lg-6"><span class="label label-blue">Emetteur RabbitMQ</span>
+
+                                                            <p></p>
+                                                            <li class="input">
+                                                                {{ form_widget(producer.description) }}
+                                                            </li>
+                                                            {% if form_errors(producer.description)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(producer.description) }}</div>
+                                                                </li>
+                                                            {% endif %}
+
+                                                            <li>
+                                                                {{ form_widget(producer.exchange) }}
+                                                            </li>
+                                                            {% if form_errors(producer.exchange)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(producer.exchange) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
+                                                    {#    <div class="col-lg-6">
+                                                            <li>
+                                                                {{ form_widget(caching_mechanism.description) }}
+                                                            </li>
+                                                            {% if form_errors(caching_mechanism.description)|length > 0 %}
+
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(caching_mechanism.description) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div> #}
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li class="embed_block">
+                                    {# <ul class="require_databases" data-prototype="&lt;li class=&quot;thumbnail padded&quot;&gt;{{ form_widget(form.require_databases.vars.prototype)|e }}&lt;/&gt;"> #}
+                                    <ul class="consume_messages"
+                                        data-prototype="&lt;ul class=&quot;prototype_consumer&quot;&gt;&lt;div class=&quot;row sub_block&quot;&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;span class=&quot;label label-blue&quot;&gt;Worker RabbitMQ&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;li class=&quot;input&quot;&gt;{{ form_widget(form.consume_messages.vars.prototype.description)|e }}&lt;/li&gt;&lt;li&gt;{{ form_widget(form.consume_messages.vars.prototype.queue)|e }}&lt;/li&gt;&lt;/div&gt;&lt;div class=&quot;col-lg-6&quot;&gt;&lt;li&gt;{{ form_widget(form.caching_mechanisms.vars.prototype.description)|e }}&lt;/li&gt;&lt;/div&gt;&lt;/div&gt;&lt;/ul&gt;">
+                                        {% for consumer in form.consume_messages %}
+
+                                            {# <ul class="padded prototype_require_databases"> #}
+
+                                            <li class="addEmbedConsumer">
+                                                <ul class="prototype_consumer">
+                                                    <div class="row sub_block">
+                                                        <div class="col-lg-6"><span class="label label-blue">Worker RabbitMQ</span>
+
+                                                            <p></p>
+                                                            <li class="input">
+                                                                {{ form_widget(consumer.description) }}
+                                                            </li>
+                                                            {% if form_errors(consumer.description)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(consumer.description) }}</div>
+                                                                </li>
+                                                            {% endif %}
+
+                                                            <li>
+                                                                {{ form_widget(consumer.queue) }}
+                                                            </li>
+                                                            {% if form_errors(consumer.queue)|length > 0 %}
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(consumer.queue) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <li>
+                                                                {{ form_widget(caching_mechanism.description) }}
+                                                            </li>
+                                                            {% if form_errors(caching_mechanism.description)|length > 0 %}
+
+                                                                <li class="clearfix" style="margin-left: 30px;">
+                                                                    <div class="note pull-left alert-danger">{{ form_errors(caching_mechanism.description) }}</div>
+                                                                </li>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                </ul>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
-
                     </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-blue">Soumettre</button>
@@ -192,11 +345,29 @@
             margin-top: 20px;
         }
 
-        ul.require_databases {
+        ul.require_databases, ul.caching_mechanisms, ul.produce_messages, ul.consume_messages {
             list-style-type: none;
         }
 
-        ul.prototype_require_databases {
+        ul.prototype_require_databases, ul.prototype_caching_mechanisms, ul.prototype_producer, ul.prototype_consumer {
+            list-style-type: none;
+        }
+        li.embed_block  {
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        div.sub_block {
+            border-style: solid;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+            margin-top: 10px;
+            border-width: 1px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-color: #c3c5ce;
+        }
+        li.clearfix ul {
             list-style-type: none;
         }
     </style>
@@ -205,54 +376,138 @@
     {% block javascripts %}
         {{ parent() }}
         <script>
+
+            // Collection Holder
+
             var collectionHolder = $('ul.require_databases');
             collectionHolder.find('li.addEmbed').each(function () {
                 addDatabaseFormDeleteLink($(this));
             });
 
-            // ajoute un lien « add a tag »
+            var CachingCollectionHolder = $('ul.caching_mechanisms');
+            CachingCollectionHolder.find('li.addEmbedCaching').each(function () {
+                addCachingFormDeleteLink($(this));
+            });
+
+            var ProducerCollectionHolder = $('ul.produce_messages');
+            ProducerCollectionHolder.find('li.addEmbedProducer').each(function () {
+                addProducerFormDeleteLink($(this));
+            });
+
+            var ConsumerCollectionHolder = $('ul.consume_messages');
+            ProducerCollectionHolder.find('li.addEmbedConsumer').each(function () {
+                addConsumerFormDeleteLink($(this));
+            });
+
+            // Links
+
             var $addDatabaseLink = $('<a href="#" class="add_database_link btn btn-success btn-xs addEmbed pull-right"><i class="icon icon-plus"></i> Ajouter une Base de donnée</a>');
             var $newLinkLi = $('<li></li>').append($addDatabaseLink);
 
+            var $addCachingLink = $('<a href="#" class="add_caching_link btn btn-blue btn-xs addEmbed pull-right"><i class="icon icon-plus"></i> Ajouter une Mise en cache</a>');
+            var $newLinkCachingLi = $('<li"></li>').append($addCachingLink);
+
+            var $addProducerLink = $('<a href="#" class="add_producer_link btn btn-blue btn-xs addEmbed pull-right"><i class="icon icon-plus"></i> Ajouter un Emetteur RabbitMQ</a>');
+            var $newLinkProducerLi = $('<li"></li>').append($addProducerLink);
+
+            var $addConsumerLink = $('<a href="#" class="add_producer_link btn btn-blue btn-xs addEmbed pull-right"><i class="icon icon-plus"></i> Ajouter un Worker RabbitMQ</a>');
+            var $newLinkConsumerLi = $('<li"></li>').append($addConsumerLink);
+
             jQuery(document).ready(function () {
-                // ajoute l'ancre « ajouter un tag » et li à la balise ul
                 collectionHolder.append($newLinkLi);
+                CachingCollectionHolder.append($newLinkCachingLi);
+                ProducerCollectionHolder.append($newLinkProducerLi);
+                ConsumerCollectionHolder.append($newLinkConsumerLi);
 
                 $addDatabaseLink.on('click', function (e) {
-                    // empêche le lien de créer un « # » dans l'URL
                     e.preventDefault();
-
-                    // ajoute un nouveau formulaire tag (voir le prochain bloc de code)
                     addDatabaseForm(collectionHolder, $newLinkLi);
+                });
 
+                $addCachingLink.on('click', function (e) {
+                    e.preventDefault();
+                    addCachingForm(CachingCollectionHolder, $newLinkCachingLi);
+                });
+
+                $addProducerLink.on('click', function (e) {
+                    e.preventDefault();
+                    addCachingForm(ProducerCollectionHolder, $newLinkProducerLi);
+                });
+
+                $addConsumerLink.on('click', function (e) {
+                    e.preventDefault();
+                    addCachingForm(ConsumerCollectionHolder, $newLinkConsumerLi);
                 });
             });
 
             function addDatabaseForm(collectionHolder, $newLinkLi) {
-                // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
                 var prototype = collectionHolder.attr('data-prototype');
-
-                // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
-                // la longueur de la collection courante
                 var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
-
-                // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
                 var $newFormLi = $('<li class="addEmbed"></li>').append(newForm);
                 $newLinkLi.before($newFormLi);
                 addDatabaseFormDeleteLink($newFormLi);
                 $('select.chzn-select').select2();
             }
 
-            function addDatabaseFormDeleteLink($tagFormLi) {
+            function addDatabaseFormDeleteLink($FormLi) {
                 var $removeFormA = $('<a class="btn btn-red btn-xs" href="#"><i class="icon icon-remove"></i> Retirer</a>');
-                $tagFormLi.append($removeFormA);
-
+                $FormLi.append($removeFormA);
                 $removeFormA.on('click', function (e) {
-                    // empêche le lien de créer un « # » dans l'URL
                     e.preventDefault();
+                    $FormLi.remove();
+                });
+            }
 
-                    // supprime l'élément li pour le formulaire de tag
-                    $tagFormLi.remove();
+
+            function addCachingForm(collectionHolder, $newLinkLi) {
+                var prototype = collectionHolder.attr('data-prototype');
+                var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+                var $newFormLi = $('<li class="addEmbedCaching"></li>').append(newForm);
+                $newLinkLi.before($newFormLi);
+                addCachingFormDeleteLink($newFormLi);
+                $('select.chzn-select').select2();
+            }
+
+            function addCachingFormDeleteLink($FormLi) {
+                var $removeFormA = $('<a class="btn btn-red btn-xs" href="#"><i class="icon icon-remove"></i> Retirer</a>');
+                $FormLi.append($removeFormA);
+                $removeFormA.on('click', function (e) {
+                    e.preventDefault();
+                    $FormLi.remove();
+                });
+            }
+            function addProducerForm(collectionHolder, $newLinkLi) {
+                var prototype = collectionHolder.attr('data-prototype');
+                var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+                var $newFormLi = $('<li class="addEmbedProducer"></li>').append(newForm);
+                $newLinkLi.before($newFormLi);
+                addCachingFormDeleteLink($newFormLi);
+                $('select.chzn-select').select2();
+            }
+
+            function addProducerFormDeleteLink($FormLi) {
+                var $removeFormA = $('<a class="btn btn-red btn-xs" href="#"><i class="icon icon-remove"></i> Retirer</a>');
+                $FormLi.append($removeFormA);
+                $removeFormA.on('click', function (e) {
+                    e.preventDefault();
+                    $FormLi.remove();
+                });
+            }
+            function addConsumerForm(collectionHolder, $newLinkLi) {
+                var prototype = collectionHolder.attr('data-prototype');
+                var newForm = prototype.replace(/__name__/g, collectionHolder.children().length);
+                var $newFormLi = $('<li class="addEmbedConsumer"></li>').append(newForm);
+                $newLinkLi.before($newFormLi);
+                addCachingFormDeleteLink($newFormLi);
+                $('select.chzn-select').select2();
+            }
+
+            function addConsumerFormDeleteLink($FormLi) {
+                var $removeFormA = $('<a class="btn btn-red btn-xs" href="#"><i class="icon icon-remove"></i> Retirer</a>');
+                $FormLi.append($removeFormA);
+                $removeFormA.on('click', function (e) {
+                    e.preventDefault();
+                    $FormLi.remove();
                 });
             }
         </script>

@@ -1,0 +1,105 @@
+{% extends '@GerFrontend/layout.html.twig' %}
+
+{%- block title -%}
+    {{ parent() }}
+    Types de cache
+{%- endblock -%}
+
+{% block maincontent %}
+    <div class="container">
+        <div class="padded row col-lg-12 col-md-12">
+            <div id="breadcrumbs">
+                {{ knp_menu_render('main', { 'depth': 5, 'currentClass': 'active', 'template': 'GerFrontendBundle:Menu:breadcrumb.html.twig'}) }}
+            </div>
+        </div>
+    </div>
+    <div class="row padded">
+        <div class="col-lg-9 col-md-12">
+            <div class="box">
+                <div class="box-header">
+
+                    <span class="title">Liste des Types de cache</span>
+                </div>
+                <div class="box-content">
+                    {% if cachingtypes|length > 0 %}
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            {% for cachingtype in cachingtypes %}
+                                <tbody>
+                                <tr>
+                                    <td>{{ cachingtype.name }}</td>
+
+                                    <td>
+
+                                        <a class="btn btn-gold"
+                                           href="{{ path("api_cachingtypes_get_edit_caching_type",{ 'id': cachingtype.id }) }}">Editer
+                                            <i class="icon icon-arrow-right"></i></a>
+                                        <a class="btn btn-red"
+                                           href="{{ path("api_cachingtypes_get_delete_caching_type",{ 'id': cachingtype.id }) }}">Supprimer</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
+                    {% else %}
+                        <div class="">
+                            <div class="col-lg-4 col-lg-offset-4">Aucun Type de cache défini</div>
+                        </div>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+
+            <div class="box">
+                <div class="box-header">
+                    <span class="title">
+                        {% if type == 'creation' %}
+                            Ajouter un Type de Cache
+                        {% else %}
+                            Modifier le Type de Cache
+                        {% endif %}
+                    </span>
+                </div>
+
+                <div class="box-content">
+                    {{ form_start(form,{ 'action': action, attr: { 'novalidate': 'novalidate', 'method': 'POST' } }) }}
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <ul class="padded separate-sections">
+
+                                <li class="input">
+                                    {{ form_widget(form.name, { 'attr': { 'placeholder': 'Nom', 'style': 'cursor: auto;  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;' }}
+                                    ) }}
+                                    {% if form_errors(form.name)|length > 0 %}
+                                </li>
+                                <li class="clearfix" style="margin-left: 30px;">
+                                    <div class="note pull-left alert-danger">{{ form_errors(form.name) }}</div>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-blue">Soumettre</button>
+                    </div>
+
+                </div>
+            </div>
+
+            {{ form_rest(form) }}
+
+        </div>
+    </div>
+    </div>
+
+
+{% endblock %}

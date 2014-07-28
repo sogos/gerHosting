@@ -3,6 +3,8 @@
 namespace Ger\Bundle\HostingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 /**
  * ApplicationDatabase
@@ -23,12 +25,13 @@ class ApplicationDatabase
 
     /**
      * @var string
-     *
+     * @NotBlank()
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
     /**
      * @var description
+     * @NotBlank()
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -40,6 +43,7 @@ class ApplicationDatabase
     private $application;
     /**
      * @var type
+     * @NotNull()
      * @ORM\ManyToOne(targetEntity="Ger\Bundle\HostingBundle\Entity\DatabaseType", inversedBy="applications_database")
      */
     private $type;
@@ -121,5 +125,28 @@ class ApplicationDatabase
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return ApplicationDatabase
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

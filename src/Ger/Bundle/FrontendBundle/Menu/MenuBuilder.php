@@ -30,7 +30,7 @@ class MenuBuilder
         $uniqid = uniqid();
         $menu->addChild('Configuration', array('uri' => '#' . $uniqid))
             ->setAttribute('href', '#' . $uniqid)
-            ->setAttribute('i-class', 'icon-dashboard')
+            ->setAttribute('i-class', 'icon-stethoscope')
             ->setAttribute('class', 'dark-nav')
             ->setChildrenAttribute('class', 'collapse')
             ->setChildrenAttribute('id', $uniqid)
@@ -40,8 +40,14 @@ class MenuBuilder
             ->setAttribute('i-class', 'icon-legal');
         $menu['Configuration']->addChild('Applications', array('route' => 'api_applications_get_applications'))
             ->setAttribute('i-class', 'icon-bar-chart');
-        $menu['Configuration']->addChild('Types BDD', array('route' => 'api_databasetypes_get_database_types'))
+        $menu['Configuration']->addChild('Types de BDD', array('route' => 'api_databasetypes_get_database_types'))
             ->setAttribute('i-class', 'icon-tasks');
+        $menu['Configuration']->addChild('Types de Cache', array('route' => 'api_cachingtypes_get_caching_types'))
+            ->setAttribute('i-class', 'icon-certificate');
+        $menu['Configuration']->addChild('Exchanges RabbitMQ', array('route' => 'api_rabbitmqexchanges_get_rabbit_m_q_exchange'))
+            ->setAttribute('i-class', 'icon-exchange');
+        $menu['Configuration']->addChild('Queues RabbitMQ', array('route' => 'api_rabbitmqqueues_get_rabbit_m_q_queue'))
+            ->setAttribute('i-class', 'icon-envelope');
 
         $menu->addChild('Logout', array('route' => 'fos_user_security_logout'))
             ->setAttribute('i-class', 'icon-user');

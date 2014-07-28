@@ -19,3 +19,27 @@ services:
         class: Ger\Bundle\HostingBundle\Form\Type\DatabaseTypeType
         tags:
             - { name: form.type, alias: ger_hosting_databasetype }
+    ger_hosting.form.type.application_caching:
+        class: Ger\Bundle\HostingBundle\Form\Type\ApplicationCachingType
+        tags:
+            - { name: form.type, alias: ger_hosting_application_caching }
+    ger_hosting.form.type.caching_type:
+        class: Ger\Bundle\HostingBundle\Form\Type\CachingTypeType
+        tags:
+            - { name: form.type, alias: ger_hosting_cachingtype }
+    ger_hosting.form.type.application_consume_message:
+        class: Ger\Bundle\HostingBundle\Form\Type\ApplicationConsumeMessageType
+        tags:
+            - { name: form.type, alias: ger_hosting_application_consume_message }
+    ger_hosting.form.type.application_produce_message:
+        class: Ger\Bundle\HostingBundle\Form\Type\ApplicationProduceMessageType
+        tags:
+            - { name: form.type, alias: ger_hosting_application_produce_message }
+    ger_hosting.form.type.rabbitmq_exchange:
+        class: Ger\Bundle\HostingBundle\Form\Type\RabbitMQExchangeType
+        tags:
+            - { name: form.type, alias: ger_hosting_rabbitmqexchange }
+    ger_hosting.form.type.rabbitmq_queue:
+        class: Ger\Bundle\HostingBundle\Form\Type\RabbitMQQueueType
+        tags:
+            - { name: form.type, alias: ger_hosting_rabbitmqqueue }

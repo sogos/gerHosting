@@ -1,0 +1,3 @@
+api.rabbitmqexchanges:
+    type:         rest
+    resource:     Ger\Bundle\HostingBundle\Controller\RabbitMQExchangeController

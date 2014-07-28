@@ -43,7 +43,7 @@ class Environment
 
     /**
      * @var authority
-     * @ORM\ManyToOne(targetEntity="Ger\Bundle\HostingBundle\Entity\Authority", inversedBy="Environments")
+     * @ORM\ManyToOne(targetEntity="Ger\Bundle\HostingBundle\Entity\Authority", inversedBy="environments")
      * @NotNull()
      */
     private $authority;
