@@ -12,4 +12,5 @@
 !bin/symfony_requirements
 /composer.phar
 .idea/*
+.idea/
 web/images/*
